@@ -1,0 +1,57 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\My Workspace\\CSharp\\WinForms\\UCLN_BCNN\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{65BE18F8-6A4D-4364-A056-C29F1CDC1113}|UCLN_BCNN\\UCLN_BCNN.csproj|d:\\my workspace\\csharp\\winforms\\ucln_bcnn\\ucln_bcnn\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{65BE18F8-6A4D-4364-A056-C29F1CDC1113}|UCLN_BCNN\\UCLN_BCNN.csproj|solutionrelative:ucln_bcnn\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65BE18F8-6A4D-4364-A056-C29F1CDC1113}|UCLN_BCNN\\UCLN_BCNN.csproj|d:\\my workspace\\csharp\\winforms\\ucln_bcnn\\ucln_bcnn\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65BE18F8-6A4D-4364-A056-C29F1CDC1113}|UCLN_BCNN\\UCLN_BCNN.csproj|solutionrelative:ucln_bcnn\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\My Workspace\\CSharp\\WinForms\\UCLN_BCNN\\UCLN_BCNN\\Form1.cs",
+              "RelativeDocumentMoniker": "UCLN_BCNN\\Form1.cs",
+              "ToolTip": "D:\\My Workspace\\CSharp\\WinForms\\UCLN_BCNN\\UCLN_BCNN\\Form1.cs",
+              "RelativeToolTip": "UCLN_BCNN\\Form1.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAcwDIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T10:19:09.388Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\My Workspace\\CSharp\\WinForms\\UCLN_BCNN\\UCLN_BCNN\\Form1.cs",
+              "RelativeDocumentMoniker": "UCLN_BCNN\\Form1.cs",
+              "ToolTip": "D:\\My Workspace\\CSharp\\WinForms\\UCLN_BCNN\\UCLN_BCNN\\Form1.cs [Design]",
+              "RelativeToolTip": "UCLN_BCNN\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-28T10:17:50.413Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
