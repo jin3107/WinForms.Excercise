@@ -51,27 +51,26 @@
             // 
             groupBoxNhap.Controls.Add(textBoxSoThuHai);
             groupBoxNhap.Controls.Add(textBoxSoThuNhat);
-            groupBoxNhap.Controls.Add(groupBoxChonTim);
             groupBoxNhap.Controls.Add(labelSoThuHai);
             groupBoxNhap.Controls.Add(labelSoThuNhat);
             groupBoxNhap.Font = new Font("Cascadia Code", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             groupBoxNhap.Location = new Point(14, 27);
             groupBoxNhap.Name = "groupBoxNhap";
-            groupBoxNhap.Size = new Size(510, 210);
+            groupBoxNhap.Size = new Size(328, 187);
             groupBoxNhap.TabIndex = 0;
             groupBoxNhap.TabStop = false;
             groupBoxNhap.Text = "Nhập";
             // 
             // textBoxSoThuHai
             // 
-            textBoxSoThuHai.Location = new Point(174, 135);
+            textBoxSoThuHai.Location = new Point(174, 120);
             textBoxSoThuHai.Name = "textBoxSoThuHai";
             textBoxSoThuHai.Size = new Size(125, 28);
             textBoxSoThuHai.TabIndex = 4;
             // 
             // textBoxSoThuNhat
             // 
-            textBoxSoThuNhat.Location = new Point(174, 69);
+            textBoxSoThuNhat.Location = new Point(174, 54);
             textBoxSoThuNhat.Name = "textBoxSoThuNhat";
             textBoxSoThuNhat.Size = new Size(125, 28);
             textBoxSoThuNhat.TabIndex = 3;
@@ -80,9 +79,9 @@
             // 
             groupBoxChonTim.Controls.Add(radioButtonBCNN);
             groupBoxChonTim.Controls.Add(radioButtonUCLN);
-            groupBoxChonTim.Location = new Point(317, 27);
+            groupBoxChonTim.Location = new Point(370, 42);
             groupBoxChonTim.Name = "groupBoxChonTim";
-            groupBoxChonTim.Size = new Size(154, 148);
+            groupBoxChonTim.Size = new Size(154, 172);
             groupBoxChonTim.TabIndex = 2;
             groupBoxChonTim.TabStop = false;
             groupBoxChonTim.Text = "Chọn tìm:";
@@ -115,7 +114,7 @@
             // 
             labelSoThuHai.AutoSize = true;
             labelSoThuHai.Font = new Font("Cascadia Code", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelSoThuHai.Location = new Point(42, 143);
+            labelSoThuHai.Location = new Point(42, 128);
             labelSoThuHai.Name = "labelSoThuHai";
             labelSoThuHai.Size = new Size(117, 20);
             labelSoThuHai.TabIndex = 1;
@@ -125,7 +124,7 @@
             // 
             labelSoThuNhat.AutoSize = true;
             labelSoThuNhat.Font = new Font("Cascadia Code", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelSoThuNhat.Location = new Point(42, 76);
+            labelSoThuNhat.Location = new Point(42, 61);
             labelSoThuNhat.Name = "labelSoThuNhat";
             labelSoThuNhat.Size = new Size(126, 20);
             labelSoThuNhat.TabIndex = 0;
@@ -139,7 +138,7 @@
             groupBoxXuat.Controls.Add(textBoxKetQua);
             groupBoxXuat.Controls.Add(labelKetQua);
             groupBoxXuat.Font = new Font("Cascadia Code", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            groupBoxXuat.Location = new Point(16, 256);
+            groupBoxXuat.Location = new Point(16, 233);
             groupBoxXuat.Name = "groupBoxXuat";
             groupBoxXuat.Size = new Size(508, 185);
             groupBoxXuat.TabIndex = 0;
@@ -204,9 +203,10 @@
             AutoScaleDimensions = new SizeF(9F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SkyBlue;
-            ClientSize = new Size(548, 462);
+            ClientSize = new Size(547, 445);
             Controls.Add(groupBoxXuat);
             Controls.Add(groupBoxNhap);
+            Controls.Add(groupBoxChonTim);
             Font = new Font("Cascadia Code", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
