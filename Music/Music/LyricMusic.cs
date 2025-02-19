@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,7 +27,7 @@ namespace Music
                 (TimeSpan.FromSeconds(52), "Chạy trốn với anh" +
                 "\n\t       ... trên cánh đồng xanh"),
                 (TimeSpan.FromSeconds(58), "Khúc nhạc hòa cùng nắng chiều dịu dàng " +
-                "\n         ... để mình gần lại mãi..."),
+                "\n         ... để mình gần lại mãi"),
                 (TimeSpan.FromSeconds(65), "Nói lời thì thầm những điều thật thà" +
                 "\n         ... đã giữ trong tim mình"),
                 (TimeSpan.FromSeconds(72), "Những chặng đường dài " +

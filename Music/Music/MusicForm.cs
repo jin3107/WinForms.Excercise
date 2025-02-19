@@ -16,13 +16,10 @@ namespace Music
     public partial class MusicForm : Form
     {
         private Timer lyricTimer;
-        private Timer iconTimer;
         private OpenFileDialog openFileDialog;
         private string[] filePath;
         private string[] fileName;
         private List<(TimeSpan, string)> lyrics;
-        private float rotationAngle = 0;
-        private Timer rotationTimer;
 
         public MusicForm()
         {
@@ -62,21 +59,6 @@ namespace Music
             pictureBoxCircle.Region = rg;
         }
 
-        private void InitRotationTimer()
-        {
-            rotationTimer = new Timer();
-            rotationTimer.Interval = 50;
-            rotationTimer.Tick += RotationTimer_Tick!;
-        }
-
-        private void RotationTimer_Tick(object sender, EventArgs e)
-        {
-            rotationAngle += 3;
-            if (rotationAngle >= 360)
-                rotationAngle = 0;
-            pictureBoxCircle.Invalidate();
-        }
-
         private void listBoxMusic_DoubleClick(object sender, EventArgs e)
         {
             if (ListBoxMusic.SelectedIndex != -1)
@@ -86,6 +68,7 @@ namespace Music
                 textBoxDuongDan.Text = fileName[chon];
                 MarqueeText();
                 lyrics = LyricMusic.ThangTuLaLoiNoiDoiCuaEm();
+                labelLyric.ForeColor = Color.Blue;
                 lyricTimer.Start();
             }
         }
