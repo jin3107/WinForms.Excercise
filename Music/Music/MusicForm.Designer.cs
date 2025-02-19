@@ -37,28 +37,30 @@
             labelDuongDan = new Label();
             buttonBrowse = new Button();
             textBoxDuongDan = new TextBox();
-            richTextBoxLyric = new RichTextBox();
             lyrictimer = new System.Windows.Forms.Timer(components);
+            labelLyric = new Label();
+            label1 = new Label();
+            pictureBoxCircle = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCircle).BeginInit();
             SuspendLayout();
             // 
             // axWindowsMediaPlayer
             // 
             axWindowsMediaPlayer.Enabled = true;
-            axWindowsMediaPlayer.Location = new Point(21, 40);
+            axWindowsMediaPlayer.Location = new Point(21, 55);
             axWindowsMediaPlayer.Name = "axWindowsMediaPlayer";
             axWindowsMediaPlayer.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer.OcxState");
-            axWindowsMediaPlayer.Size = new Size(686, 530);
+            axWindowsMediaPlayer.Size = new Size(450, 400);
             axWindowsMediaPlayer.TabIndex = 0;
             // 
             // ListBoxMusic
             // 
-            ListBoxMusic.Font = new Font("Segoe UI", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ListBoxMusic.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             ListBoxMusic.FormattingEnabled = true;
-            ListBoxMusic.ItemHeight = 17;
-            ListBoxMusic.Location = new Point(749, 90);
+            ListBoxMusic.Location = new Point(530, 124);
             ListBoxMusic.Name = "ListBoxMusic";
-            ListBoxMusic.Size = new Size(350, 480);
+            ListBoxMusic.Size = new Size(371, 84);
             ListBoxMusic.TabIndex = 2;
             ListBoxMusic.DoubleClick += listBoxMusic_DoubleClick;
             // 
@@ -66,7 +68,7 @@
             // 
             labelDanhSach.AutoSize = true;
             labelDanhSach.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelDanhSach.Location = new Point(749, 40);
+            labelDanhSach.Location = new Point(530, 55);
             labelDanhSach.Name = "labelDanhSach";
             labelDanhSach.Size = new Size(260, 38);
             labelDanhSach.TabIndex = 3;
@@ -75,7 +77,7 @@
             // buttonThoat
             // 
             buttonThoat.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonThoat.Location = new Point(998, 585);
+            buttonThoat.Location = new Point(779, 492);
             buttonThoat.Name = "buttonThoat";
             buttonThoat.Size = new Size(101, 47);
             buttonThoat.TabIndex = 4;
@@ -87,7 +89,7 @@
             // 
             labelDuongDan.AutoSize = true;
             labelDuongDan.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelDuongDan.Location = new Point(21, 598);
+            labelDuongDan.Location = new Point(21, 498);
             labelDuongDan.Name = "labelDuongDan";
             labelDuongDan.Size = new Size(100, 25);
             labelDuongDan.TabIndex = 5;
@@ -96,7 +98,7 @@
             // buttonBrowse
             // 
             buttonBrowse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonBrowse.Location = new Point(613, 591);
+            buttonBrowse.Location = new Point(530, 491);
             buttonBrowse.Name = "buttonBrowse";
             buttonBrowse.Size = new Size(94, 41);
             buttonBrowse.TabIndex = 6;
@@ -107,35 +109,59 @@
             // textBoxDuongDan
             // 
             textBoxDuongDan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxDuongDan.Location = new Point(127, 593);
+            textBoxDuongDan.Location = new Point(127, 492);
             textBoxDuongDan.Name = "textBoxDuongDan";
-            textBoxDuongDan.Size = new Size(480, 34);
+            textBoxDuongDan.Size = new Size(386, 34);
             textBoxDuongDan.TabIndex = 7;
             textBoxDuongDan.TextChanged += textBoxDuongDan_TextChanged;
-            // 
-            // richTextBoxLyric
-            // 
-            richTextBoxLyric.BackColor = SystemColors.Desktop;
-            richTextBoxLyric.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBoxLyric.ForeColor = SystemColors.Window;
-            richTextBoxLyric.Location = new Point(21, 441);
-            richTextBoxLyric.Name = "richTextBoxLyric";
-            richTextBoxLyric.Size = new Size(686, 50);
-            richTextBoxLyric.TabIndex = 8;
-            richTextBoxLyric.Text = "";
-            richTextBoxLyric.TextChanged += richTextBoxLyric_TextChanged;
             // 
             // lyrictimer
             // 
             lyrictimer.Tick += lyrictimer_Tick;
+            // 
+            // labelLyric
+            // 
+            labelLyric.AutoSize = true;
+            labelLyric.BackColor = SystemColors.Control;
+            labelLyric.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            labelLyric.ForeColor = SystemColors.Desktop;
+            labelLyric.Location = new Point(530, 325);
+            labelLyric.Name = "labelLyric";
+            labelLyric.Size = new Size(36, 28);
+            labelLyric.TabIndex = 8;
+            labelLyric.Text = "---";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.Control;
+            label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.Desktop;
+            label1.Location = new Point(530, 270);
+            label1.Name = "label1";
+            label1.Size = new Size(60, 28);
+            label1.TabIndex = 9;
+            label1.Text = "Lyric:";
+            // 
+            // pictureBoxCircle
+            // 
+            pictureBoxCircle.BackgroundImage = Properties.Resources.logo_600x600;
+            pictureBoxCircle.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBoxCircle.Location = new Point(96, 80);
+            pictureBoxCircle.Name = "pictureBoxCircle";
+            pictureBoxCircle.Size = new Size(300, 300);
+            pictureBoxCircle.TabIndex = 10;
+            pictureBoxCircle.TabStop = false;
             // 
             // MusicForm
             // 
             AutoScaleDimensions = new SizeF(20F, 50F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1127, 656);
-            Controls.Add(richTextBoxLyric);
+            ClientSize = new Size(937, 557);
+            Controls.Add(pictureBoxCircle);
+            Controls.Add(label1);
+            Controls.Add(labelLyric);
             Controls.Add(textBoxDuongDan);
             Controls.Add(buttonBrowse);
             Controls.Add(labelDuongDan);
@@ -149,6 +175,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MusicForm";
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCircle).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -162,7 +189,9 @@
         private Label labelDuongDan;
         private Button buttonBrowse;
         private TextBox textBoxDuongDan;
-        private RichTextBox richTextBoxLyric;
         private System.Windows.Forms.Timer lyrictimer;
+        private Label labelLyric;
+        private Label label1;
+        private PictureBox pictureBoxCircle;
     }
 }

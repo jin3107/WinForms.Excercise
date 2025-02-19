@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
@@ -14,14 +16,19 @@ namespace Music
     public partial class MusicForm : Form
     {
         private Timer lyricTimer;
+        private Timer iconTimer;
         private OpenFileDialog openFileDialog;
         private string[] filePath;
         private string[] fileName;
+        private List<(TimeSpan, string)> lyrics;
+        private float rotationAngle = 0;
+        private Timer rotationTimer;
 
         public MusicForm()
         {
             InitializeComponent();
             InitLyricTimer();
+            InitCircleIcon();
         }
 
         private void buttonThoat_Click(object sender, EventArgs e)
@@ -46,15 +53,51 @@ namespace Music
             }
         }
 
+        private void InitCircleIcon()
+        {
+            Rectangle r = new Rectangle(0, 0, pictureBoxCircle.Width, pictureBoxCircle.Height);
+            GraphicsPath gp = new GraphicsPath();
+            gp.AddEllipse(0, 0, pictureBoxCircle.Width - 3, pictureBoxCircle.Height - 3);
+            Region rg = new Region(gp);
+            pictureBoxCircle.Region = rg;
+        }
+
+        private void InitRotationTimer()
+        {
+            rotationTimer = new Timer();
+            rotationTimer.Interval = 50;
+            rotationTimer.Tick += RotationTimer_Tick!;
+        }
+
+        private void RotationTimer_Tick(object sender, EventArgs e)
+        {
+            rotationAngle += 3;
+            if (rotationAngle >= 360)
+                rotationAngle = 0;
+            pictureBoxCircle.Invalidate();
+        }
+
         private void listBoxMusic_DoubleClick(object sender, EventArgs e)
         {
             if (ListBoxMusic.SelectedIndex != -1)
             {
                 int chon = ListBoxMusic.SelectedIndex;
                 axWindowsMediaPlayer.URL = filePath[chon];
-                this.textBoxDuongDan.Text = fileName[chon];
+                textBoxDuongDan.Text = fileName[chon];
+                MarqueeText();
+                lyrics = LyricMusic.ThangTuLaLoiNoiDoiCuaEm();
+                lyricTimer.Start();
+            }
+        }
 
-                richTextBoxLyric.Text = GetLyrics(filePath[chon]);
+        private async void MarqueeText()
+        {
+            while (true)
+            {
+                string text = textBoxDuongDan.Text;
+                if (text.Length > 1)
+                    textBoxDuongDan.Text = text.Substring(1) + text[0];
+                await Task.Delay(200);
             }
         }
 
@@ -63,34 +106,21 @@ namespace Music
             this.textBoxDuongDan.ReadOnly = true;
         }
 
-        private void richTextBoxLyric_TextChanged(object sender, EventArgs e)
-        {
-            this.richTextBoxLyric.ReadOnly = true;
-        }
-
         private void lyrictimer_Tick(object sender, EventArgs e)
         {
-            
+            if (axWindowsMediaPlayer.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                TimeSpan currentTime = TimeSpan.FromSeconds(axWindowsMediaPlayer.Ctlcontrols.currentPosition);
+                var currentLyric = lyrics.FindLast(l => l.Item1 <= currentTime);
+                if (!string.IsNullOrEmpty(currentLyric.Item2))
+                    labelLyric.Text = currentLyric.Item2;
+            }
         }
 
         private void InitLyricTimer()
         {
-            lyricTimer = new Timer();
-            lyricTimer.Interval = 500;
+            lyricTimer = new Timer { Interval = 500 };
             lyricTimer.Tick += lyrictimer_Tick!;
-        }
-
-        private string GetLyrics(string filePath)
-        {
-            try
-            {
-                var file = TagLib.File.Create(filePath);
-                return file.Tag.Lyrics ?? "Không có lời bài hát";
-            }
-            catch (Exception ex)
-            {
-                return "Lỗi: " + ex.Message;
-            }
         }
     }
 }
