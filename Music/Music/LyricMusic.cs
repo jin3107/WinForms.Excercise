@@ -39,9 +39,9 @@ namespace Music
                 (TimeSpan.FromSeconds(89), "Em có bay xa em có đi xa mãi"),
                 (TimeSpan.FromSeconds(93), "Tháng tư đôi khi thật mong manh"),
                 (TimeSpan.FromSeconds(97), "Để mình nói ra những câu chân thật"),
-                (TimeSpan.FromSeconds(101), "Giá như tôi một lần tin em"),
+                (TimeSpan.FromSeconds(100), "Giá như tôi một lần tin em"),
                 (TimeSpan.FromSeconds(104), "Cô gái tôi thương nay hóa theo mây gió"),
-                (TimeSpan.FromSeconds(109), "Để lại tháng tư ở đó..."),
+                (TimeSpan.FromSeconds(108), "Để lại tháng tư ở đó..."),
             };
         }
     }

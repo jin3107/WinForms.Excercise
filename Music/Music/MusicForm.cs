@@ -30,7 +30,8 @@ namespace Music
 
         private void buttonThoat_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn Thoát không?", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Bạn có muốn Thoát không?", "Thoát", 
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
                 Application.Exit();
         }
@@ -66,14 +67,14 @@ namespace Music
                 int chon = ListBoxMusic.SelectedIndex;
                 axWindowsMediaPlayer.URL = filePath[chon];
                 textBoxDuongDan.Text = fileName[chon];
-                MarqueeText();
+                ChayChu();
                 lyrics = LyricMusic.ThangTuLaLoiNoiDoiCuaEm();
                 labelLyric.ForeColor = Color.Blue;
                 lyricTimer.Start();
             }
         }
 
-        private async void MarqueeText()
+        private async void ChayChu()
         {
             while (true)
             {
