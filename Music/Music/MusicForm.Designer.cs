@@ -31,11 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MusicForm));
             axWindowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
-            ListBoxMusic = new ListBox();
-            labelDanhSach = new Label();
             buttonThoat = new Button();
             labelDuongDan = new Label();
-            buttonBrowse = new Button();
             textBoxDuongDan = new TextBox();
             lyrictimer = new System.Windows.Forms.Timer(components);
             labelLyric = new Label();
@@ -48,36 +45,16 @@
             // axWindowsMediaPlayer
             // 
             axWindowsMediaPlayer.Enabled = true;
-            axWindowsMediaPlayer.Location = new Point(21, 55);
+            axWindowsMediaPlayer.Location = new Point(21, 12);
             axWindowsMediaPlayer.Name = "axWindowsMediaPlayer";
             axWindowsMediaPlayer.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer.OcxState");
-            axWindowsMediaPlayer.Size = new Size(450, 400);
+            axWindowsMediaPlayer.Size = new Size(599, 427);
             axWindowsMediaPlayer.TabIndex = 0;
-            // 
-            // ListBoxMusic
-            // 
-            ListBoxMusic.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            ListBoxMusic.FormattingEnabled = true;
-            ListBoxMusic.Location = new Point(530, 124);
-            ListBoxMusic.Name = "ListBoxMusic";
-            ListBoxMusic.Size = new Size(371, 84);
-            ListBoxMusic.TabIndex = 2;
-            ListBoxMusic.DoubleClick += listBoxMusic_DoubleClick;
-            // 
-            // labelDanhSach
-            // 
-            labelDanhSach.AutoSize = true;
-            labelDanhSach.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelDanhSach.Location = new Point(530, 55);
-            labelDanhSach.Name = "labelDanhSach";
-            labelDanhSach.Size = new Size(260, 38);
-            labelDanhSach.TabIndex = 3;
-            labelDanhSach.Text = "Danh Sách Bài Hát";
             // 
             // buttonThoat
             // 
             buttonThoat.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonThoat.Location = new Point(779, 492);
+            buttonThoat.Location = new Point(519, 543);
             buttonThoat.Name = "buttonThoat";
             buttonThoat.Size = new Size(101, 47);
             buttonThoat.TabIndex = 4;
@@ -89,27 +66,16 @@
             // 
             labelDuongDan.AutoSize = true;
             labelDuongDan.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelDuongDan.Location = new Point(21, 498);
+            labelDuongDan.Location = new Point(21, 549);
             labelDuongDan.Name = "labelDuongDan";
             labelDuongDan.Size = new Size(100, 25);
             labelDuongDan.TabIndex = 5;
             labelDuongDan.Text = "Đang phát:";
             // 
-            // buttonBrowse
-            // 
-            buttonBrowse.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonBrowse.Location = new Point(530, 491);
-            buttonBrowse.Name = "buttonBrowse";
-            buttonBrowse.Size = new Size(94, 41);
-            buttonBrowse.TabIndex = 6;
-            buttonBrowse.Text = "Browse ...";
-            buttonBrowse.UseVisualStyleBackColor = true;
-            buttonBrowse.Click += buttonBrowse_Click;
-            // 
             // textBoxDuongDan
             // 
             textBoxDuongDan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxDuongDan.Location = new Point(127, 492);
+            textBoxDuongDan.Location = new Point(127, 543);
             textBoxDuongDan.Name = "textBoxDuongDan";
             textBoxDuongDan.Size = new Size(386, 34);
             textBoxDuongDan.TabIndex = 7;
@@ -125,7 +91,7 @@
             labelLyric.BackColor = SystemColors.Control;
             labelLyric.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             labelLyric.ForeColor = SystemColors.Desktop;
-            labelLyric.Location = new Point(530, 325);
+            labelLyric.Location = new Point(21, 488);
             labelLyric.Name = "labelLyric";
             labelLyric.Size = new Size(36, 28);
             labelLyric.TabIndex = 8;
@@ -137,7 +103,7 @@
             label1.BackColor = SystemColors.Control;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Desktop;
-            label1.Location = new Point(530, 270);
+            label1.Location = new Point(21, 442);
             label1.Name = "label1";
             label1.Size = new Size(60, 28);
             label1.TabIndex = 9;
@@ -145,11 +111,11 @@
             // 
             // pictureBoxCircle
             // 
-            pictureBoxCircle.BackgroundImage = Properties.Resources.logo_600x600;
+            pictureBoxCircle.BackgroundImage = (Image)resources.GetObject("pictureBoxCircle.BackgroundImage");
             pictureBoxCircle.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBoxCircle.Location = new Point(96, 80);
+            pictureBoxCircle.Location = new Point(87, 24);
             pictureBoxCircle.Name = "pictureBoxCircle";
-            pictureBoxCircle.Size = new Size(300, 300);
+            pictureBoxCircle.Size = new Size(471, 358);
             pictureBoxCircle.TabIndex = 10;
             pictureBoxCircle.TabStop = false;
             // 
@@ -158,22 +124,21 @@
             AutoScaleDimensions = new SizeF(20F, 50F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(937, 557);
+            ClientSize = new Size(639, 599);
             Controls.Add(pictureBoxCircle);
             Controls.Add(label1);
             Controls.Add(labelLyric);
             Controls.Add(textBoxDuongDan);
-            Controls.Add(buttonBrowse);
             Controls.Add(labelDuongDan);
             Controls.Add(buttonThoat);
-            Controls.Add(labelDanhSach);
-            Controls.Add(ListBoxMusic);
             Controls.Add(axWindowsMediaPlayer);
             Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(7);
             Name = "MusicForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MusicForm";
+            Load += MusicForm_Load;
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCircle).EndInit();
             ResumeLayout(false);
@@ -183,11 +148,8 @@
         #endregion
 
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer;
-        private ListBox ListBoxMusic;
-        private Label labelDanhSach;
         private Button buttonThoat;
         private Label labelDuongDan;
-        private Button buttonBrowse;
         private TextBox textBoxDuongDan;
         private System.Windows.Forms.Timer lyrictimer;
         private Label labelLyric;

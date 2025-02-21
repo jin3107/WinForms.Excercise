@@ -9,6 +9,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 using Timer = System.Windows.Forms.Timer;
 
 namespace Music
@@ -26,29 +27,15 @@ namespace Music
             InitializeComponent();
             InitLyricTimer();
             InitCircleIcon();
+            textBoxDuongDan.ReadOnly = true;
         }
 
         private void buttonThoat_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn Thoát không?", "Thoát", 
+            DialogResult result = MessageBox.Show("Bạn có muốn Thoát không?", "Thoát",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
                 Application.Exit();
-        }
-
-        private void buttonBrowse_Click(object sender, EventArgs e)
-        {
-            openFileDialog = new OpenFileDialog();
-            openFileDialog.Filter = "Mp3 files, Mp4 files(*.mp3, *.mp4)|*.mp*";
-            openFileDialog.Multiselect = true;
-            openFileDialog.Title = "Open";
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                filePath = openFileDialog.FileNames;
-                fileName = openFileDialog.SafeFileNames;
-                foreach (var item in fileName)
-                    this.ListBoxMusic.Items.Add(item);
-            }
         }
 
         private void InitCircleIcon()
@@ -58,20 +45,6 @@ namespace Music
             gp.AddEllipse(0, 0, pictureBoxCircle.Width - 3, pictureBoxCircle.Height - 3);
             Region rg = new Region(gp);
             pictureBoxCircle.Region = rg;
-        }
-
-        private void listBoxMusic_DoubleClick(object sender, EventArgs e)
-        {
-            if (ListBoxMusic.SelectedIndex != -1)
-            {
-                int chon = ListBoxMusic.SelectedIndex;
-                axWindowsMediaPlayer.URL = filePath[chon];
-                textBoxDuongDan.Text = fileName[chon];
-                ChayChu();
-                lyrics = LyricMusic.ThangTuLaLoiNoiDoiCuaEm();
-                labelLyric.ForeColor = Color.Blue;
-                lyricTimer.Start();
-            }
         }
 
         private async void ChayChu()
@@ -87,7 +60,7 @@ namespace Music
 
         private void textBoxDuongDan_TextChanged(object sender, EventArgs e)
         {
-            this.textBoxDuongDan.ReadOnly = true;
+            
         }
 
         private void lyrictimer_Tick(object sender, EventArgs e)
@@ -105,6 +78,26 @@ namespace Music
         {
             lyricTimer = new Timer { Interval = 500 };
             lyricTimer.Tick += lyrictimer_Tick!;
+        }
+
+        private void MusicForm_Load(object sender, EventArgs e)
+        {
+            string musicFile = Path.Combine(Application.StartupPath, "Resources", 
+                "Tháng tư là lời nói dối của em - Hà Anh Tuấn.mp3");
+            if (!File.Exists(musicFile))
+            {
+                MessageBox.Show("Không tìm thấy file nhạc!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            filePath = new string[] { musicFile };
+            fileName = new string[] { " Tháng tư là lời nói dối của em. " };
+            axWindowsMediaPlayer.URL = filePath[0];
+            textBoxDuongDan.Text = fileName[0];
+            ChayChu();
+            lyrics = LyricMusic.ThangTuLaLoiNoiDoiCuaEm();
+            labelLyric.ForeColor = Color.Blue;
+            lyricTimer.Start();
+            axWindowsMediaPlayer.Ctlcontrols.play();
         }
     }
 }
