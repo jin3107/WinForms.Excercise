@@ -17,7 +17,6 @@ namespace Music
     public partial class MusicForm : Form
     {
         private Timer lyricTimer;
-        private OpenFileDialog openFileDialog;
         private string[] filePath;
         private string[] fileName;
         private List<(TimeSpan, string)> lyrics;
