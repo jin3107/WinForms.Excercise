@@ -56,7 +56,7 @@
             buttonThoat.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonThoat.Location = new Point(519, 606);
             buttonThoat.Name = "buttonThoat";
-            buttonThoat.Size = new Size(101, 47);
+            buttonThoat.Size = new Size(101, 35);
             buttonThoat.TabIndex = 4;
             buttonThoat.Text = "Thoát";
             buttonThoat.UseVisualStyleBackColor = true;
@@ -113,9 +113,9 @@
             // 
             pictureBoxCircle.BackgroundImage = (Image)resources.GetObject("pictureBoxCircle.BackgroundImage");
             pictureBoxCircle.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBoxCircle.Location = new Point(113, 25);
+            pictureBoxCircle.Location = new Point(54, 25);
             pictureBoxCircle.Name = "pictureBoxCircle";
-            pictureBoxCircle.Size = new Size(413, 400);
+            pictureBoxCircle.Size = new Size(532, 400);
             pictureBoxCircle.TabIndex = 10;
             pictureBoxCircle.TabStop = false;
             // 
