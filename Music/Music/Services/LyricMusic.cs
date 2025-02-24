@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HtmlAgilityPack;
+using HtmlDocument = HtmlAgilityPack.HtmlDocument;
 
 namespace Music
 {
     public static class LyricMusic
     {
+        private static readonly HttpClient httpClient = new HttpClient();
+
         public static List<(TimeSpan, string)> ThangTuLaLoiNoiDoiCuaEm()
         {
             return new List<(TimeSpan, string)>

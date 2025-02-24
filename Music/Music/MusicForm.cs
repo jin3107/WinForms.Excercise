@@ -24,6 +24,10 @@ namespace Music
         public MusicForm()
         {
             InitializeComponent();
+            filePath = Array.Empty<string>();
+            fileName = Array.Empty<string>();
+            lyrics = new List<(TimeSpan, string)>();
+            lyricTimer = new Timer();
             InitLyricTimer();
             InitCircleIcon();
             textBoxDuongDan.ReadOnly = true;

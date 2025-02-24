@@ -48,13 +48,13 @@
             axWindowsMediaPlayer.Location = new Point(21, 12);
             axWindowsMediaPlayer.Name = "axWindowsMediaPlayer";
             axWindowsMediaPlayer.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer.OcxState");
-            axWindowsMediaPlayer.Size = new Size(599, 427);
+            axWindowsMediaPlayer.Size = new Size(599, 476);
             axWindowsMediaPlayer.TabIndex = 0;
             // 
             // buttonThoat
             // 
             buttonThoat.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonThoat.Location = new Point(519, 543);
+            buttonThoat.Location = new Point(519, 606);
             buttonThoat.Name = "buttonThoat";
             buttonThoat.Size = new Size(101, 47);
             buttonThoat.TabIndex = 4;
@@ -66,7 +66,7 @@
             // 
             labelDuongDan.AutoSize = true;
             labelDuongDan.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelDuongDan.Location = new Point(21, 549);
+            labelDuongDan.Location = new Point(21, 612);
             labelDuongDan.Name = "labelDuongDan";
             labelDuongDan.Size = new Size(100, 25);
             labelDuongDan.TabIndex = 5;
@@ -75,7 +75,7 @@
             // textBoxDuongDan
             // 
             textBoxDuongDan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxDuongDan.Location = new Point(127, 543);
+            textBoxDuongDan.Location = new Point(127, 606);
             textBoxDuongDan.Name = "textBoxDuongDan";
             textBoxDuongDan.Size = new Size(386, 34);
             textBoxDuongDan.TabIndex = 7;
@@ -91,7 +91,7 @@
             labelLyric.BackColor = SystemColors.Control;
             labelLyric.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             labelLyric.ForeColor = SystemColors.Desktop;
-            labelLyric.Location = new Point(21, 488);
+            labelLyric.Location = new Point(21, 551);
             labelLyric.Name = "labelLyric";
             labelLyric.Size = new Size(36, 28);
             labelLyric.TabIndex = 8;
@@ -103,7 +103,7 @@
             label1.BackColor = SystemColors.Control;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Desktop;
-            label1.Location = new Point(21, 442);
+            label1.Location = new Point(21, 505);
             label1.Name = "label1";
             label1.Size = new Size(60, 28);
             label1.TabIndex = 9;
@@ -113,9 +113,9 @@
             // 
             pictureBoxCircle.BackgroundImage = (Image)resources.GetObject("pictureBoxCircle.BackgroundImage");
             pictureBoxCircle.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBoxCircle.Location = new Point(87, 24);
+            pictureBoxCircle.Location = new Point(113, 25);
             pictureBoxCircle.Name = "pictureBoxCircle";
-            pictureBoxCircle.Size = new Size(471, 358);
+            pictureBoxCircle.Size = new Size(413, 400);
             pictureBoxCircle.TabIndex = 10;
             pictureBoxCircle.TabStop = false;
             // 
@@ -124,7 +124,7 @@
             AutoScaleDimensions = new SizeF(20F, 50F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(639, 599);
+            ClientSize = new Size(639, 653);
             Controls.Add(pictureBoxCircle);
             Controls.Add(label1);
             Controls.Add(labelLyric);
