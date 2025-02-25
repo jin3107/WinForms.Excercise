@@ -35,9 +35,9 @@
             labelDuongDan = new Label();
             textBoxDuongDan = new TextBox();
             lyrictimer = new System.Windows.Forms.Timer(components);
-            labelLyric = new Label();
             label1 = new Label();
             pictureBoxCircle = new PictureBox();
+            richTextBoxLyric = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCircle).BeginInit();
             SuspendLayout();
@@ -54,7 +54,7 @@
             // buttonThoat
             // 
             buttonThoat.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonThoat.Location = new Point(519, 606);
+            buttonThoat.Location = new Point(519, 612);
             buttonThoat.Name = "buttonThoat";
             buttonThoat.Size = new Size(101, 35);
             buttonThoat.TabIndex = 4;
@@ -66,7 +66,7 @@
             // 
             labelDuongDan.AutoSize = true;
             labelDuongDan.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelDuongDan.Location = new Point(21, 612);
+            labelDuongDan.Location = new Point(21, 618);
             labelDuongDan.Name = "labelDuongDan";
             labelDuongDan.Size = new Size(100, 25);
             labelDuongDan.TabIndex = 5;
@@ -75,7 +75,7 @@
             // textBoxDuongDan
             // 
             textBoxDuongDan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBoxDuongDan.Location = new Point(127, 606);
+            textBoxDuongDan.Location = new Point(127, 612);
             textBoxDuongDan.Name = "textBoxDuongDan";
             textBoxDuongDan.Size = new Size(386, 34);
             textBoxDuongDan.TabIndex = 7;
@@ -85,25 +85,13 @@
             // 
             lyrictimer.Tick += lyrictimer_Tick;
             // 
-            // labelLyric
-            // 
-            labelLyric.AutoSize = true;
-            labelLyric.BackColor = SystemColors.Control;
-            labelLyric.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            labelLyric.ForeColor = SystemColors.Desktop;
-            labelLyric.Location = new Point(21, 551);
-            labelLyric.Name = "labelLyric";
-            labelLyric.Size = new Size(36, 28);
-            labelLyric.TabIndex = 8;
-            labelLyric.Text = "---";
-            // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.Control;
             label1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Desktop;
-            label1.Location = new Point(21, 505);
+            label1.Location = new Point(21, 491);
             label1.Name = "label1";
             label1.Size = new Size(60, 28);
             label1.TabIndex = 9;
@@ -119,15 +107,24 @@
             pictureBoxCircle.TabIndex = 10;
             pictureBoxCircle.TabStop = false;
             // 
+            // richTextBoxLyric
+            // 
+            richTextBoxLyric.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            richTextBoxLyric.Location = new Point(21, 522);
+            richTextBoxLyric.Name = "richTextBoxLyric";
+            richTextBoxLyric.Size = new Size(599, 70);
+            richTextBoxLyric.TabIndex = 11;
+            richTextBoxLyric.Text = "";
+            // 
             // MusicForm
             // 
             AutoScaleDimensions = new SizeF(20F, 50F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(639, 653);
+            ClientSize = new Size(639, 669);
+            Controls.Add(richTextBoxLyric);
             Controls.Add(pictureBoxCircle);
             Controls.Add(label1);
-            Controls.Add(labelLyric);
             Controls.Add(textBoxDuongDan);
             Controls.Add(labelDuongDan);
             Controls.Add(buttonThoat);
@@ -152,8 +149,8 @@
         private Label labelDuongDan;
         private TextBox textBoxDuongDan;
         private System.Windows.Forms.Timer lyrictimer;
-        private Label labelLyric;
         private Label label1;
         private PictureBox pictureBoxCircle;
+        private RichTextBox richTextBoxLyric;
     }
 }

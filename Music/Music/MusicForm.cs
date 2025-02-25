@@ -76,9 +76,9 @@ namespace Music
 
             TimeSpan currentTime = TimeSpan.FromSeconds(axWindowsMediaPlayer.Ctlcontrols.currentPosition);
             var currentLyric = lyrics.FindLast(l => l.Item1 <= currentTime);
-            if (currentLyric != default && currentLyric.Item2 != labelLyric.Text)
+            if (currentLyric != default && currentLyric.Item2 != richTextBoxLyric.Text)
             {
-                labelLyric.Text = currentLyric.Item2;
+                richTextBoxLyric.Text = currentLyric.Item2;
             }
         }
 
@@ -95,7 +95,7 @@ namespace Music
             if (!File.Exists(fileName))
             {
                 MessageBox.Show("Không tìm thấy file lyric!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                labelLyric.Text = "Không có lời";
+                richTextBoxLyric.Text = "Không có lời";
                 return;
             }
 
@@ -117,7 +117,7 @@ namespace Music
             }
             lyrics.Sort((a, b) => a.Item1.CompareTo(b.Item1));
             currentLine = 0;
-            labelLyric.Text = lyrics.Count > 0 ? lyrics[0].Item2 : "Không có lời";
+            richTextBoxLyric.Text = lyrics.Count > 0 ? lyrics[0].Item2 : "Không có lời";
         }
 
         private void MusicForm_Load(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace Music
             textBoxDuongDan.Text = fileName[0];
             ChayChu();
             LoadLyricsFromFile(lyricFile);
-            labelLyric.ForeColor = Color.Blue;
+            richTextBoxLyric.ForeColor = Color.Blue;
             lyricTimer.Start();
             axWindowsMediaPlayer.Ctlcontrols.play();
         }
