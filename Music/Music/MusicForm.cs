@@ -21,6 +21,10 @@ namespace Music
         private string[] fileName;
         private List<(TimeSpan, string)> lyrics;
         private int currentLine;
+        private int currentCharIndex = 0;
+        private string currentLyric = "";
+        private Timer colorTimer;
+        private DateTime lyricTime;
 
         public MusicForm()
         {
@@ -51,6 +55,31 @@ namespace Music
             pictureBoxCircle.Region = rg;
         }
 
+        private void InitColorTimer()
+        {
+            colorTimer = new Timer { Interval = 90 };
+            colorTimer.Tick += colorTimer_Tick!;
+        }
+
+        private void colorTimer_Tick(object sender, EventArgs e)
+        {
+            if (richTextBoxLyric.Text != currentLyric)
+            {
+                currentCharIndex = 0;
+                currentLyric = richTextBoxLyric.Text;
+            }
+
+            if (currentCharIndex < currentLyric.Length)
+            {
+                richTextBoxLyric.SelectionStart = currentCharIndex;
+                richTextBoxLyric.SelectionLength = 1;
+                richTextBoxLyric.SelectionColor = Color.Blue;
+                currentCharIndex++;
+            }
+            else
+                colorTimer.Stop();
+        }
+
         private async void ChayChu()
         {
             while (true)
@@ -70,15 +99,17 @@ namespace Music
         private void lyrictimer_Tick(object sender, EventArgs e)
         {
             if (axWindowsMediaPlayer.playState != WMPLib.WMPPlayState.wmppsPlaying)
-            {
                 return;
-            }
 
             TimeSpan currentTime = TimeSpan.FromSeconds(axWindowsMediaPlayer.Ctlcontrols.currentPosition);
             var currentLyric = lyrics.FindLast(l => l.Item1 <= currentTime);
             if (currentLyric != default && currentLyric.Item2 != richTextBoxLyric.Text)
             {
                 richTextBoxLyric.Text = currentLyric.Item2;
+                richTextBoxLyric.SelectionColor = Color.Black;
+                colorTimer.Stop();
+                currentCharIndex = 0;
+                colorTimer.Start();
             }
         }
 
@@ -86,6 +117,7 @@ namespace Music
         {
             lyricTimer = new Timer { Interval = 500 };
             lyricTimer.Tick += lyrictimer_Tick!;
+            InitColorTimer();
         }
 
         private void LoadLyricsFromFile(string fileName)
@@ -138,7 +170,7 @@ namespace Music
             textBoxDuongDan.Text = fileName[0];
             ChayChu();
             LoadLyricsFromFile(lyricFile);
-            richTextBoxLyric.ForeColor = Color.Blue;
+            richTextBoxLyric.ForeColor = Color.DimGray;
             lyricTimer.Start();
             axWindowsMediaPlayer.Ctlcontrols.play();
         }
