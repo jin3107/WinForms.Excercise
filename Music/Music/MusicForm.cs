@@ -144,10 +144,8 @@ namespace Music
 
         private void MusicForm_Load(object sender, EventArgs e)
         {
-            string musicFile = Path.Combine(Application.StartupPath, "Resources",
-                "Tháng tư là lời nói dối của em - Hà Anh Tuấn.mp3");
-            string lyricFile = Path.Combine(Application.StartupPath, "Resources",
-                "ThangTuLaLoiNoiDoiCuaEm.lrc");
+            string musicFile = Path.Combine(Application.StartupPath, "Resources", "Tháng tư là lời nói dối của em - Hà Anh Tuấn.mp3");
+            string lyricFile = Path.Combine(Application.StartupPath, "Resources", "ThangTuLaLoiNoiDoiCuaEm.lrc");
             if (!File.Exists(musicFile))
             {
                 MessageBox.Show("Không tìm thấy file nhạc!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
