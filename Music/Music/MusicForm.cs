@@ -34,7 +34,6 @@ namespace Music
             lyrics = new List<(TimeSpan, string)>();
             lyricTimer = new Timer();
             InitLyricTimer();
-            InitCircleIcon();
             textBoxDuongDan.ReadOnly = true;
         }
 
@@ -44,15 +43,6 @@ namespace Music
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
                 Application.Exit();
-        }
-
-        private void InitCircleIcon()
-        {
-            Rectangle r = new Rectangle(0, 0, pictureBoxCircle.Width, pictureBoxCircle.Height);
-            GraphicsPath gp = new GraphicsPath();
-            gp.AddEllipse(0, 0, pictureBoxCircle.Width - 3, pictureBoxCircle.Height - 3);
-            Region rg = new Region(gp);
-            pictureBoxCircle.Region = rg;
         }
 
         private void InitColorTimer()

@@ -101,9 +101,9 @@
             // 
             pictureBoxCircle.BackgroundImage = (Image)resources.GetObject("pictureBoxCircle.BackgroundImage");
             pictureBoxCircle.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBoxCircle.Location = new Point(54, 25);
+            pictureBoxCircle.Location = new Point(21, 12);
             pictureBoxCircle.Name = "pictureBoxCircle";
-            pictureBoxCircle.Size = new Size(532, 400);
+            pictureBoxCircle.Size = new Size(599, 431);
             pictureBoxCircle.TabIndex = 10;
             pictureBoxCircle.TabStop = false;
             // 
