@@ -179,6 +179,8 @@
             numericUpDownCoChu.Name = "numericUpDownCoChu";
             numericUpDownCoChu.Size = new Size(164, 34);
             numericUpDownCoChu.TabIndex = 5;
+            numericUpDownCoChu.ThousandsSeparator = true;
+            numericUpDownCoChu.Value = new decimal(new int[] { 15, 0, 0, 0 });
             numericUpDownCoChu.ValueChanged += numericUpDownCoChu_ValueChanged;
             // 
             // Hinh2_16
