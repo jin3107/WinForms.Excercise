@@ -63,6 +63,9 @@
     <EmbeddedResource Include="Bai3-tr33.resx">
       <DependentUpon>Bai3-tr33.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bai4-tr33.resx">
+      <DependentUpon>Bai4-tr33.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
