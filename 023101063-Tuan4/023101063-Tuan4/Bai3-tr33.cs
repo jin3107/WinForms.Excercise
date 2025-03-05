@@ -11,11 +11,10 @@ namespace _023101063_Tuan4
         public Form1()
         {
             InitializeComponent();
-
-            // Gán sự kiện chung cho tất cả RadioButton
             radioButtonLaptop.CheckedChanged += radioButton_CheckedChanged;
             radioButtonUSB.CheckedChanged += radioButton_CheckedChanged;
             radioButtonMouse.CheckedChanged += radioButton_CheckedChanged;
+            DanhSachSanPham.SelectedIndexChanged += DanhSachSanPham_SelectedIndexChanged;
         }
 
         private async void radioButton_CheckedChanged(object sender, EventArgs e)
@@ -46,13 +45,15 @@ namespace _023101063_Tuan4
         private async Task LoadCategoryImagesAsync(string category)
         {
             ShowAllImages();
-            PictureBox[] pictureBoxes = { pictureBox1, pictureBox2, pictureBox3, pictureBox4 };
+            PictureBox[] pictureBoxes = { pictureBox1, pictureBox2, pictureBox3, pictureBox4, pictureBox5 };
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < 5; i++)
             {
                 string imagePath = Path.Combine(Application.StartupPath, "images", $"{category}_{i + 1}.jpg");
                 pictureBoxes[i].Image = await LoadImageAsync(imagePath);
             }
+
+            pictureBox5.Visible = false;
         }
 
         private async Task<Image> LoadImageAsync(string path)
@@ -76,11 +77,15 @@ namespace _023101063_Tuan4
                 string imagePath = Path.Combine(Application.StartupPath, "images", selectedProduct + ".jpg");
 
                 HideAllImages();
-                pictureBox1.Image = await LoadImageAsync(imagePath);
+                pictureBox5.Image = await LoadImageAsync(imagePath);
 
-                if (pictureBox1.Image == null)
+                if (pictureBox5.Image == null)
                 {
                     MessageBox.Show("Không tìm thấy ảnh của sản phẩm!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    pictureBox5.Visible = true;
                 }
             }
         }
@@ -91,6 +96,7 @@ namespace _023101063_Tuan4
             pictureBox2.Image = null;
             pictureBox3.Image = null;
             pictureBox4.Image = null;
+            pictureBox5.Image = null;
         }
 
         private void ShowAllImages()
@@ -99,6 +105,7 @@ namespace _023101063_Tuan4
             pictureBox2.Visible = true;
             pictureBox3.Visible = true;
             pictureBox4.Visible = true;
+            pictureBox5.Visible = true;
         }
     }
 }

@@ -52,6 +52,12 @@
     <Compile Include="Bai3-tr33.Designer.cs">
       <DependentUpon>Bai3-tr33.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bai4-tr33.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bai4-tr33.Designer.cs">
+      <DependentUpon>Bai4-tr33.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bai3-tr33.resx">
