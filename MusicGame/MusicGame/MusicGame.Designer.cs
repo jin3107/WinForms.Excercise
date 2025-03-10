@@ -45,11 +45,9 @@
             this.txtDiem = new System.Windows.Forms.TextBox();
             this.WindowsMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             this.btStart = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbTuyChon.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.WindowsMediaPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gbTuyChon
@@ -208,6 +206,7 @@
             this.WindowsMediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("WindowsMediaPlayer.OcxState")));
             this.WindowsMediaPlayer.Size = new System.Drawing.Size(222, 157);
             this.WindowsMediaPlayer.TabIndex = 7;
+            this.WindowsMediaPlayer.Visible = false;
             // 
             // btStart
             // 
@@ -220,21 +219,12 @@
             this.btStart.UseVisualStyleBackColor = false;
             this.btStart.Click += new System.EventHandler(this.btStart_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(314, 263);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(277, 177);
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
             // MusicGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.RosyBrown;
             this.ClientSize = new System.Drawing.Size(1044, 545);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btStart);
             this.Controls.Add(this.WindowsMediaPlayer);
             this.Controls.Add(this.txtDiem);
@@ -252,7 +242,6 @@
             this.gbTuyChon.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.WindowsMediaPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,6 +265,5 @@
         private System.Windows.Forms.TextBox txtDiem;
         private AxWMPLib.AxWindowsMediaPlayer WindowsMediaPlayer;
         private System.Windows.Forms.Button btStart;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
