@@ -16,7 +16,7 @@ namespace _023101063_Tuan5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Hinh2_26());
+            Application.Run(new Bai8_tr37());
         }
     }
 }

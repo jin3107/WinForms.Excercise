@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bai8-tr37.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bai8-tr37.Designer.cs">
+      <DependentUpon>Bai8-tr37.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hinh2-26.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,6 +60,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bai8-tr37.resx">
+      <DependentUpon>Bai8-tr37.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hinh2-26.resx">
       <DependentUpon>Hinh2-26.cs</DependentUpon>
     </EmbeddedResource>
