@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _023101063_Tuan5
+namespace baitap0703
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace _023101063_Tuan5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Bai7_tr36());
+            Application.Run(new Form2());
         }
     }
 }
