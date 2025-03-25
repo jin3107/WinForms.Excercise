@@ -7,13 +7,21 @@
 ### Mực lục
 
 [Bài 2 - trang 33](#2-33)
+
 [Bài 3 - trang 33](#3-33)
+
 [Bài 4 - trang 34](#4-34)
+
 [Bài 5 - trang 34](#5-34)
+
 [Bài 6 - trang 35](#6-35)
+
 [Bài 7 - trang 36](#7-36)
+
 [Bài 8 - trang 37](#8-37)
+
 [Bài 9 - trang 38](#9-38)
+
 [Bài 10 - trang 39](#10-39)
 
 # Bài tập Chương 2
