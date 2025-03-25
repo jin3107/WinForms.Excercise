@@ -30,7 +30,7 @@
 ### Bài 2 - trang 33
 - Thiết kế form như hình bên dưới:
 ![Hình minh họa](./images/2-33.png)
-- Khi người dùng nhập vào các thông tin trên các TextBox: Họ tên, ngày sinh sở thích và nhấn nút *Xác nhận* thì sẽ xuất hiện một hộp thoại xác nhận lại những thông tin đã nhập.
+- Khi người dùng nhập vào các thông tin trên các TextBox: Họ tên, ngày sinh sở thích và nhấn nút **Xác nhận** thì sẽ xuất hiện một hộp thoại xác nhận lại những thông tin đã nhập.
 
 <a name="3-33"></a>
 ### Bài 3 - trang 33
@@ -95,7 +95,7 @@
         | Yến Như       | 4              | 7         | 7          |
 
     + Khi chọn 1 dòng ListView danh sách lớp thì thông tin chi tiết của sinh viên sẽ được hinể thị lên các đối tượng: Họ tên, Lập trình GD, Mạng MT, CSDL SQL. Đồng thời điểm trung bình của sinh viên đang được chọn sẽ hiển thị bên dưới ListView như hình trên.
-    + Khi người dùng chỉnh sửa nội dung các đối tượng Họ tên, Lập trình GD, Mạng MT, CSDL SQL của dòng đang chọn trên ListView và nhấn nút *Cập nhật* thì thông tin chi tiết của sinh viên sẽ được cập nhật trên ListView.
+    + Khi người dùng chỉnh sửa nội dung các đối tượng Họ tên, Lập trình GD, Mạng MT, CSDL SQL của dòng đang chọn trên ListView và nhấn nút **Cập nhật** thì thông tin chi tiết của sinh viên sẽ được cập nhật trên ListView.
     + Khi người dùng thêm nội dung các đối tượng Họ tên, Lập trình GD, Mạng MT, CSDL SQL của dòng đang chọn trên ListView và nhấn nút *Thêm* thông tin của sinh viên sẽ được thêm vào ListView.
 
 <a name="8-37"></a>
@@ -115,20 +115,20 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
 - Thiết kế form như hình bên dưới:
 ![Hình minh họa](./images/9-38.png)
 - Mô tả:
-    + Combobox *cbLoaiMonAn* danh sách các loại món ăn: Trung hira Quốc, Việt Nam, Hàn Quốc
-    + CheckedListBox *listChiTietMonAn* chứa danh sách các món ăn của từng loại món ăn trên
-    + Khi chọn *Việt Nam* sẽ hiển thị danh sách các món ăn: *Gỏi cuốn, Bánh Flan, Bún thịt nướng, Gà hấp chao*.
-    + Khi chọn *Hàn Quốc* sẽ hiển thị danh sách các món ăn: *Su si, Canh rong biển, Kim chi, Cơm trộn*.
-    + Khi chọn *Trung Quốc* sẽ hiển thị danh sách các món ăn: *Mì vịt tiềm, Mì xào giòn, Bánh canh vịt, Hột vịt lộn*.
-    + ListView *dsMonAnChon* là danh sách các món ăn được chọn ở CheckedListBox.
+    + Combobox **cbLoaiMonAn** danh sách các loại món ăn: Trung hira Quốc, Việt Nam, Hàn Quốc
+    + CheckedListBox **listChiTietMonAn** chứa danh sách các món ăn của từng loại món ăn trên
+    + Khi chọn **Việt Nam** sẽ hiển thị danh sách các món ăn: **Gỏi cuốn, Bánh Flan, Bún thịt nướng, Gà hấp chao**.
+    + Khi chọn **Hàn Quốc** sẽ hiển thị danh sách các món ăn: **Su si, Canh rong biển, Kim chi, Cơm trộn**.
+    + Khi chọn **Trung Quốc** sẽ hiển thị danh sách các món ăn: **Mì vịt tiềm, Mì xào giòn, Bánh canh vịt, Hột vịt lộn**.
+    + ListView **dsMonAnChon** là danh sách các món ăn được chọn ở CheckedListBox.
     + NumericUpDown là số lượng đặt chọn cho món ăn đã chọn có giá trị mặc định từ 1-100.
 - Yêu cầu:
-    + Ban đầu cho Enabled *Chi tiết món ăn*. Khi người dùng chọn loại món ăn trong Combobox *LoaiMonAn*, danh sách các món ăn chi tiết sẽ được hiển thị ở dưới CheckedListBox *ChiTietMonAn*.
-    + Người dùng chọn *1 hoặc nhiều* món ăn ở CheckedListBox *ChiTietMonAn*, gỡ vào số lượng (mặc định là 1), sau đó nhấn *Button btChon*, các món ăn này sẽ được thêm vào trong ListView *dsMonAnChon*. 
-    + Khi nhấn button *Chọn*, nếu món ăn đã có trong danh sách thì sẽ cập nhật lại số lượng của món ăn đó với giá trị số lượng mới (không thêm dữ liệu trùng).
-    + Nếu người dùng chọn *1 hoặc nhiều* món ăn ở *dsMonAnChon*, sau đó nhấn Button Bỏ Chọn số lượng sẽ giảm đi -1, nếu sau khi -1 mà số lượng = 0 món ăn này sẽ loại khỏi danh sách *dsMonAnChon*.
-    + Khi nhấn Button *Tạo Mới*, sẽ xóa toàn bộ món ăn ở *DSMonAnChon* (trước khi oMoi, hỏi người dùng có chắc chắn chưa).
-    + Khi nhấn *Kết thúc*, kết thúc xử lý Form.
+    + Ban đầu cho Enabled *Chi tiết món ăn*. Khi người dùng chọn loại món ăn trong Combobox **LoaiMonAn**, danh sách các món ăn chi tiết sẽ được hiển thị ở dưới CheckedListBox **ChiTietMonAn**.
+    + Người dùng chọn **1 hoặc nhiều** món ăn ở CheckedListBox **ChiTietMonAn**, gỡ vào số lượng (mặc định là 1), sau đó nhấn *Button btChon*, các món ăn này sẽ được thêm vào trong ListView **dsMonAnChon**. 
+    + Khi nhấn button **Chọn**, nếu món ăn đã có trong danh sách thì sẽ cập nhật lại số lượng của món ăn đó với giá trị số lượng mới (không thêm dữ liệu trùng).
+    + Nếu người dùng chọn *1 hoặc nhiều* món ăn ở **dsMonAnChon**, sau đó nhấn Button Bỏ Chọn số lượng sẽ giảm đi -1, nếu sau khi -1 mà số lượng = 0 món ăn này sẽ loại khỏi danh sách **dsMonAnChon**.
+    + Khi nhấn Button **Tạo Mới**, sẽ xóa toàn bộ món ăn ở *D*SMonAnChon** (trước khi oMoi, hỏi người dùng có chắc chắn chưa).
+    + Khi nhấn **Kết thúc**, kết thúc xử lý Form.
 
 <a name="10-39"></a>
 ### Bài 10 - trang 39
