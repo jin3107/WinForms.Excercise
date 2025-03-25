@@ -30,7 +30,7 @@
 ### Bài 2 - trang 33
 - Thiết kế form như hình bên dưới:
 ![Hình minh họa](./images/2-33.png)
-- Khi người dùng nhập vào các thông tin trên các TextBox: Họ tên, ngày sinh sở thích và nhấn nút **Xác nhận** thì sẽ xuất hiện một hộp thoại xác nhận lại những thông tin đã nhập.
+- Khi người dùng nhập vào các thông tin trên các TextBox: Họ tên, ngày sinh sở thích và nhấn nút *Xác nhận* thì sẽ xuất hiện một hộp thoại xác nhận lại những thông tin đã nhập.
 
 <a name="3-33"></a>
 ### Bài 3 - trang 33
@@ -53,8 +53,8 @@
 - Yêu cầu:
     + Thiết kế giao diện.
     + Khi người dùng nhập thông tin vào TextBox Tên món và chọn Nước uống hoặc Món ăn và nhấn nút Thêm thì thông tin món ăn sẽ được thêm vào ListBox tương ứng.
-    + Chọn 1 Món ăn và nhấn nút `>>` thì dòng dữ liệu được chọn bên Món ăn sẽ được xóa khỏi ListBox Món ăn và thêm vào ListBox Nước uống.
-    + Chọn 1 Nước uống và nhấn nút `<<` thì dòng dữ liệu được chọn bên Nước uống sẽ được xóa khỏi ListBox Nước uống và thêm vào ListBox Món ăn.
+    + Chọn 1 Món ăn và nhấn nút ` >> ` thì dòng dữ liệu được chọn bên Món ăn sẽ được xóa khỏi ListBox Món ăn và thêm vào ListBox Nước uống.
+    + Chọn 1 Nước uống và nhấn nút ` << ` thì dòng dữ liệu được chọn bên Nước uống sẽ được xóa khỏi ListBox Nước uống và thêm vào ListBox Món ăn.
 
 <a name="6-35"></a>
 ### Bài 6 - trang 35
@@ -64,13 +64,13 @@
     + Thiết kế giao diện.
     + Combobox loại xe gồm các loại xe: Vision, Click, SH mode. Khi chọn 1 loại xe sẽ hiển thị thông tin tương ứng như bảng bên dưới.
     
-    | *Loại xe*  | *Màu*    | *Đơn giá*    |
-    |:----------:|:--------:|:------------:| 
-    |  Vision    | Xanh     | 35.000.000   |
-    |  Click     | Trắng    | 42.000.000   |
-    |  SH mode   | Đỏ       | 50.000.000   |
+        | *Loại xe*  | *Màu*    | *Đơn giá*    |
+        |:----------:|:--------:|:------------:| 
+        |  Vision    | Xanh     | 35.000.000   |
+        |  Click     | Trắng    | 42.000.000   |
+        |  SH mode   | Đỏ       | 50.000.000   |
     
-    + Khi người dùng chọn số lượng và nhấn nút *Tính tiền* thì giá tiền hinể thị trong Label Thành tiền.
+    + Khi người dùng chọn số lượng và nhấn nút *Tính tiền* thì giá tiền hiển thị trong Label Thành tiền.
 
 <a name="7-36"></a>
 ### Bài 7 - trang 36
@@ -80,31 +80,55 @@
     + Thiết kế giao diện, Combobox Lớp gồm có 2 lớp là: Cao đẳng 17 và Cao đẳng 18.
     + Khi chọn lớp **Cao đẳng 17** sẽ hiển thị các thông tin tương ứng như sau:
 
-    | **Họ tên**      | **Lập trình GD** | **Mạng MT** | **CSDL SQL** |
-    |:---------------:|:----------------:|:-----------:|:------------:|
-    | Anh Tuấn        | 9                | 8           | 9            |
-    | Hoàng Giang     | 10               | 7           | 9            |
-    | Trâm Anh        | 8                | 7           | 10           |
+        | *Họ tên*      | *Lập trình GD* | *Mạng MT* | *CSDL SQL* |
+        |:-------------:|:--------------:|:---------:|:----------:|
+        | Anh Tuấn      | 9              | 8         | 9          |
+        | Hoàng Giang   | 10             | 7         | 9          |
+        | Trâm Anh      | 8              | 7         | 10         |
 
     + Khi chọn lớp **Cao đẳng 18** sẽ hiển thị các thông tin tương ứng như sau: 
 
-    | **Họ tên**      | **Lập trình GD** | **Mạng MT** | **CSDL SQL** |
-    |:---------------:|:----------------:|:-----------:|:------------:|
-    | Hữu Tiến        | 7                | 8           | 9            |
-    | Thanh Lâm       | 5                | 4           | 6            |
-    | Yến Như         | 4                | 7           | 7            |
+        | *Họ tên*      | *Lập trình GD* | *Mạng MT* | *CSDL SQL* |
+        |:-------------:|:--------------:|:---------:|:----------:|
+        | Hữu Tiến      | 7              | 8         | 9          |
+        | Thanh Lâm     | 5              | 4         | 6          |
+        | Yến Như       | 4              | 7         | 7          |
 
     + Khi chọn 1 dòng ListView danh sách lớp thì thông tin chi tiết của sinh viên sẽ được hinể thị lên các đối tượng: Họ tên, Lập trình GD, Mạng MT, CSDL SQL. Đồng thời điểm trung bình của sinh viên đang được chọn sẽ hiển thị bên dưới ListView như hình trên.
-    + Khi người dùng chỉnh sửa nội dung các đối tượng Họ tên, Lập trình GD, Mạng MT, CSDL SQL của dòng đang chọn trên ListView và nhấn nút **Cập nhật** thì thông tin chi tiết của sinh viên sẽ được cập nhật trên ListView.
-    + Khi người dùng thêm nội dung các đối tượng Họ tên, Lập trình GD, Mạng MT, CSDL SQL của dòng đang chọn trên ListView và nhấn nút **Thêm** thông tin của sinh viên sẽ được thêm vào ListView.
+    + Khi người dùng chỉnh sửa nội dung các đối tượng Họ tên, Lập trình GD, Mạng MT, CSDL SQL của dòng đang chọn trên ListView và nhấn nút *Cập nhật* thì thông tin chi tiết của sinh viên sẽ được cập nhật trên ListView.
+    + Khi người dùng thêm nội dung các đối tượng Họ tên, Lập trình GD, Mạng MT, CSDL SQL của dòng đang chọn trên ListView và nhấn nút *Thêm* thông tin của sinh viên sẽ được thêm vào ListView.
 
 <a name="8-37"></a>
 ### Bài 8 - trang 37
+- Thiết kế form có dạng như sau:
+![Hình minh họa](./images/8-37.png)
+- Yêu cầu:
+    + Trong menu, hiển thị tất cả danh mục thức uống tương ứng khi người dùng chọn loại thức uống gồm: Nước uống, nước ép, sinh tố.
+    + Khi nhấn nút ` > `, thức uống được chọn trong Menu sẽ được thêm vào danh sách các thức uống đã chọn. Số lượng tăng thêm 1, thành tiền tăng theo đơn giá của thức uống.
+    + Khi nhấn nút ` < `, thức uống đang chọn trên danh sách thức uống đã chọn sẽ giảm số lượng -1, thành tiền giảm theo đơn giá. Nếu soluong = 0 thì xóa khỏi danh sách.
 
+
+Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã chọn.
 
 <a name="9-38"></a>
-### Bài 8 - trang 38
-
+### Bài 9 - trang 38
+- Thiết kế form như hình bên dưới:
+![Hình minh họa](./images/9-38.png)
+- Mô tả:
+    + Combobox *cbLoaiMonAn* danh sách các loại món ăn: Trung hira Quốc, Việt Nam, Hàn Quốc
+    + CheckedListBox *listChiTietMonAn* chứa danh sách các món ăn của từng loại món ăn trên
+    + Khi chọn *Việt Nam* sẽ hiển thị danh sách các món ăn: *Gỏi cuốn, Bánh Flan, Bún thịt nướng, Gà hấp chao*.
+    + Khi chọn *Hàn Quốc* sẽ hiển thị danh sách các món ăn: *Su si, Canh rong biển, Kim chi, Cơm trộn*.
+    + Khi chọn *Trung Quốc* sẽ hiển thị danh sách các món ăn: *Mì vịt tiềm, Mì xào giòn, Bánh canh vịt, Hột vịt lộn*.
+    + ListView *dsMonAnChon* là danh sách các món ăn được chọn ở CheckedListBox.
+    + NumericUpDown là số lượng đặt chọn cho món ăn đã chọn có giá trị mặc định từ 1-100.
+- Yêu cầu:
+    + Ban đầu cho Enabled *Chi tiết món ăn*. Khi người dùng chọn loại món ăn trong Combobox *LoaiMonAn*, danh sách các món ăn chi tiết sẽ được hiển thị ở dưới CheckedListBox *ChiTietMonAn*.
+    + Người dùng chọn *1 hoặc nhiều* món ăn ở CheckedListBox *ChiTietMonAn*, gỡ vào số lượng (mặc định là 1), sau đó nhấn *Button btChon*, các món ăn này sẽ được thêm vào trong ListView *dsMonAnChon*. 
+    + Khi nhấn button *Chọn*, nếu món ăn đã có trong danh sách thì sẽ cập nhật lại số lượng của món ăn đó với giá trị số lượng mới (không thêm dữ liệu trùng).
+    + Nếu người dùng chọn *1 hoặc nhiều* món ăn ở *dsMonAnChon*, sau đó nhấn Button Bỏ Chọn số lượng sẽ giảm đi -1, nếu sau khi -1 mà số lượng = 0 món ăn này sẽ loại khỏi danh sách *dsMonAnChon*.
+    + Khi nhấn Button *Tạo Mới*, sẽ xóa toàn bộ món ăn ở *DSMonAnChon* (trước khi oMoi, hỏi người dùng có chắc chắn chưa).
+    + Khi nhấn *Kết thúc*, kết thúc xử lý Form.
 
 <a name="10-39"></a>
 ### Bài 10 - trang 39
