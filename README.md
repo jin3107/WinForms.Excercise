@@ -152,7 +152,7 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
 
 <a name="bs2"></a>
 ### Bài tập bổ sung 2
-- Thiết kế form như sau:
+- Thiết kế form như hình bên dưới:
 ![Hình mình họa](./images/BS2-1.png)
 - Yêu cầu: Công ty Taxi ABC cung cấp dịch vụ với giá cước được quy định bằng bảng giá như sau:
     + Giá cước km đầu tiên là 20000 vnd/km.
