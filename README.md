@@ -24,7 +24,9 @@
 
 [Bài 10 - trang 39](#10-39)
 
-[Bài tập - Bổ sung 1](#bs1)
+[Bài tập bổ sung 1](#bs1)
+
+[Bài tập bổ sung 2](#bs2)
 
 # Bài tập Chương 2
 
@@ -137,7 +139,7 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
 
 
 <a name="bs1"></a>
-### Bài tập bồ sung 1
+### Bài tập bổ sung 1
 - Thiết kế form như hình bên dưới:
 ![Hình minh họa](./images/BS1-1.png)
 - Yêu cầu:
@@ -147,3 +149,17 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
         * ![Hình minh họa](./images/BS1-2.png)
     + Lúc Runtime thì 3 pictureBox Xanh, Xàng, Đỏ đều là hình tròn/cầu/bầu dục... 
     + Bấm nút **Thoát** thì form sẽ kết thúc.
+
+<a name="bs2"></a>
+### Bài tập bổ sung 2
+- Thiết kế form như sau:
+![Hình mình họa](./images/BS2-1.png)
+- Yêu cầu: Công ty Taxi ABC cung cấp dịch vụ với giá cước được quy định bằng bảng giá như sau:
+    + Giá cước km đầu tiên là 20000 vnd/km.
+    + Giá cước km thứ 2-12 tiếp theo là 16000 vnd/km.
+    + Giá cước km thứ 13-25 là 15500 vnd/km.
+    + Giá cước từ km 26 trở đi là 13500 vnd/km.
+    + ![Hình minh họa](./images/BS2-2.png)
+        * Ví dụ: 17.3 -> Số tiền là 287150 vnd/km;
+                0.5 -> Số tiền là 20000 vnd/km;
+                10 -> Số tiền là 164000 vnd/km.
