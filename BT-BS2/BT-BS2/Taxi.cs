@@ -40,64 +40,41 @@ namespace BT_BS2
         private void TinhTienTheoMuc()
         {
             CultureInfo culture = new CultureInfo("en-US");
-            int soKm = Convert.ToInt32(txtSoKm.Text);
-            if (soKm <= 1)
+            double soKm = Convert.ToDouble(txtSoKm.Text);
+            double tien1 = 0, tien2 = 0, tien3 = 0, tien4 = 0, tongTien = 0;
+            lblMuc1.Visible = false;
+            lblMuc2.Visible = false;
+            lblMuc3.Visible = false;
+            lblMuc4.Visible = false;
+            if (soKm > 0)
             {
-                double tien = 20000;
+                tien1 = 20000;
                 lblMuc1.Visible = true;
-                lblMuc1.Text = "Số tiền Mức 1 là: " + tien.ToString("N0", culture);
-                lblTongTien.Text = "Số km Tổng tiền phải trả là: " + tien.ToString("#,###", culture);
-
-                lblMuc2.Visible = false;
-                lblMuc3.Visible = false;
-                lblMuc4.Visible = false;
+                lblMuc1.Text = "Số tiền Mức 1 là: " + tien1.ToString("N0", culture);
             }
-            if (soKm >= 2 && soKm <= 12)
+            if (soKm > 1)
             {
-                double tien = 20000;
-                lblMuc1.Visible = true;
-                lblMuc1.Text = "Số tiền Mức 1 là: " + tien.ToString("N0", culture);
-                if (soKm - 12 > 0)
-                {
-                    lblMuc2.Visible = true;
-                    lblMuc2.Text = "Số tiền Mức 2 là: " + ((soKm - 12) * 16000).ToString("N0", culture);
-                    lblTongTien.Text = "Số km Tổng tiền phải trả là: " + (tien + ((soKm - 12) * 16000)).ToString("N0", culture);
-                }
-                else
-                {
-                    lblMuc2.Visible = true;
-                    lblMuc2.Text = "Số tiền Mức 2 là: " + (soKm * 16000).ToString("N0", culture);
-                    lblTongTien.Text = "Số km Tổng tiền phải trả là: " + (tien + (soKm * 16000)).ToString("N0", culture);
-                }
-                lblMuc3.Visible = false;
-                lblMuc4.Visible = false;
-            }
-            if (soKm >= 13 && soKm <= 25)
-            {
-                double tien = 20000;
-                lblMuc1.Visible = true;
-                lblMuc1.Text = "Số tiền Mức 1 là: " + tien.ToString("N0", culture);
+                double kmTier2 = Math.Min(soKm - 1, 11);
+                tien2 = kmTier2 * 16000;
                 lblMuc2.Visible = true;
-                lblMuc2.Text = "Số tiền Mức 2 là: " + (11 * 16000).ToString("N0", culture);
-                lblMuc3.Visible = true;
-                lblMuc3.Text = "Số tiền Mức 3 là: " + ((soKm - 12) * 15500).ToString("N0", culture);
-                lblTongTien.Text = "Số km Tổng tiền phải trả là: " + (tien + (11 * 16000) + ((soKm - 12) * 15500)).ToString("N0", culture);
-                lblMuc4.Visible = false;
+                lblMuc2.Text = "Số tiền Mức 2 là: " + tien2.ToString("N0", culture);
             }
-            if (soKm >= 26)
+            if (soKm > 12)
             {
-                double tien = 20000;
-                lblMuc1.Visible = true;
-                lblMuc1.Text = "Số tiền Mức 1 là: " + tien.ToString("N0", culture);
-                lblMuc2.Visible = true;
-                lblMuc2.Text = "Số tiền Mức 2 là: " + (11 * 16000).ToString("N0", culture);
+                double kmTier3 = Math.Min(soKm - 12, 13);
+                tien3 = kmTier3 * 15500;
                 lblMuc3.Visible = true;
-                lblMuc3.Text = "Số tiền Mức 3 là: " + (11 * 15500).ToString("N0", culture);
+                lblMuc3.Text = "Số tiền Mức 3 là: " + tien3.ToString("N0", culture);
+            }
+            if (soKm > 25)
+            {
+                double kmTier4 = soKm - 25;
+                tien4 = kmTier4 * 13500;
                 lblMuc4.Visible = true;
-                lblMuc4.Text = "Số tiền Mức 4 là: " + ((soKm - 26) * 13500).ToString("N0", culture);
-                lblTongTien.Text = "Số km Tổng tiền phải trả là: " + (tien + (11 * 16000) + (11 * 15500) + ((soKm - 26) * 13500)).ToString("N0", culture);
+                lblMuc4.Text = "Số tiền Mức 4 là: " + tien4.ToString("N0", culture);
             }
+            tongTien = tien1 + tien2 + tien3 + tien4;
+            lblTongTien.Text = "Số km Tổng tiền phải trả là: " + tongTien.ToString("N0", culture);
         }
-
     }
 }
