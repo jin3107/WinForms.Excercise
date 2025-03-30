@@ -170,7 +170,7 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
 ### Bài tập bổ sung 3
 - Một cơ sở gia công cơ khí, cần 1 chi tiết máy là hình lăng trụ đứng, kích thước mặt đáy được xác định bởi các điểm A,B,C,D nằm trên mặt phẳng (theo thứ tự). Xem các điểm A,B,C,D được mô tả như trong mặt phẳng tọa độ Oxy như sau: A($x_1$;$y_1$); B($x_2$;$y_2$); C($x_3$;$y3$); D($x_4$;$y_4$).
 - Thể tích lăng trụ đứng có đáy là tứ giác ABCD nêu trên.
-- Công thức tính độ dài cạnh AB bằng Pythagore: $AB = \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$
+- Công thức tính độ dài cạnh AB bằng Pythagore: AB = $\sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2}$
 - Công thức tính diện tích: S = $\sqrt{p.(p - AB).(p - BC).(p - AC)}$. Với p = $\frac{a + b + c}{3}$ là nửa chu vi tam giác, S là diện tích tam giác, V = S.h (V là thể tích, h là chiều cao lăng trụ đứng).
 - Thiết kế form như hình bên dưới:
 ![Hình minh họa](./images/BS3-1.png)
