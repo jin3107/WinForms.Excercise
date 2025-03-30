@@ -144,6 +144,6 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
     + Khi người dùng nhập thời gian trong **textBox** của đèn xanh và đỏ, nhấn nút **Hiển Thị** thì thời gian của 2 đèn đó sẽ hiển thị trên **label**.
     + Nếu người dùng không nhập 1 trong 2 thời gian trên thì sẽ hiện **MessageBox** thông báo lỗi.
     + Màu đèn của mỗi đèn sẽ được cập nhật nếu hết thời gian đèn (Đèn vàng thì set cứng là 5 giây).
-        * [Hình minh họa](./images/BS1-2.png)
+        * ![Hình minh họa](./images/BS1-2.png)
     + Lúc Runtime thì 3 pictureBox Xanh, Xàng, Đỏ đều là hình tròn/cầu/bầu dục... 
     + Bấm nút **Thoát** thì form sẽ kết thúc.
