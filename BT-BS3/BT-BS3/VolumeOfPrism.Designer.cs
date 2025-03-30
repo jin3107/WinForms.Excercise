@@ -35,7 +35,7 @@
             this.lvlDiemC = new System.Windows.Forms.Label();
             this.lblDiemD = new System.Windows.Forms.Label();
             this.lblChieuCao = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTT = new System.Windows.Forms.Label();
             this.lblDoDaiAB = new System.Windows.Forms.Label();
             this.lblDoDaiBC = new System.Windows.Forms.Label();
             this.lblDoDaiAC = new System.Windows.Forms.Label();
@@ -57,7 +57,7 @@
             this.lblTTLT.AutoSize = true;
             this.lblTTLT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTTLT.ForeColor = System.Drawing.Color.Red;
-            this.lblTTLT.Location = new System.Drawing.Point(223, 9);
+            this.lblTTLT.Location = new System.Drawing.Point(210, 9);
             this.lblTTLT.Name = "lblTTLT";
             this.lblTTLT.Size = new System.Drawing.Size(267, 29);
             this.lblTTLT.TabIndex = 0;
@@ -117,19 +117,19 @@
             this.lblChieuCao.TabIndex = 6;
             this.lblChieuCao.Text = "Chiều cao lăng trụ tứ giác: ";
             // 
-            // label1
+            // lblTT
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 284);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(203, 22);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Thể tích của lăng trụ là: ";
+            this.lblTT.AutoSize = true;
+            this.lblTT.Location = new System.Drawing.Point(25, 284);
+            this.lblTT.Name = "lblTT";
+            this.lblTT.Size = new System.Drawing.Size(203, 22);
+            this.lblTT.TabIndex = 7;
+            this.lblTT.Text = "Thể tích của lăng trụ là: ";
             // 
             // lblDoDaiAB
             // 
             this.lblDoDaiAB.AutoSize = true;
-            this.lblDoDaiAB.Location = new System.Drawing.Point(388, 230);
+            this.lblDoDaiAB.Location = new System.Drawing.Point(336, 230);
             this.lblDoDaiAB.Name = "lblDoDaiAB";
             this.lblDoDaiAB.Size = new System.Drawing.Size(141, 22);
             this.lblDoDaiAB.TabIndex = 8;
@@ -138,7 +138,7 @@
             // lblDoDaiBC
             // 
             this.lblDoDaiBC.AutoSize = true;
-            this.lblDoDaiBC.Location = new System.Drawing.Point(388, 284);
+            this.lblDoDaiBC.Location = new System.Drawing.Point(336, 284);
             this.lblDoDaiBC.Name = "lblDoDaiBC";
             this.lblDoDaiBC.Size = new System.Drawing.Size(142, 22);
             this.lblDoDaiBC.TabIndex = 9;
@@ -147,7 +147,7 @@
             // lblDoDaiAC
             // 
             this.lblDoDaiAC.AutoSize = true;
-            this.lblDoDaiAC.Location = new System.Drawing.Point(388, 337);
+            this.lblDoDaiAC.Location = new System.Drawing.Point(336, 337);
             this.lblDoDaiAC.Name = "lblDoDaiAC";
             this.lblDoDaiAC.Size = new System.Drawing.Size(142, 22);
             this.lblDoDaiAC.TabIndex = 10;
@@ -213,32 +213,35 @@
             // 
             this.txtChieuCaoLT.Location = new System.Drawing.Point(255, 224);
             this.txtChieuCaoLT.Name = "txtChieuCaoLT";
-            this.txtChieuCaoLT.Size = new System.Drawing.Size(100, 28);
+            this.txtChieuCaoLT.Size = new System.Drawing.Size(49, 28);
             this.txtChieuCaoLT.TabIndex = 19;
             // 
             // btNhapDiem
             // 
-            this.btNhapDiem.Location = new System.Drawing.Point(538, 110);
+            this.btNhapDiem.Location = new System.Drawing.Point(485, 110);
             this.btNhapDiem.Name = "btNhapDiem";
             this.btNhapDiem.Size = new System.Drawing.Size(126, 38);
             this.btNhapDiem.TabIndex = 20;
             this.btNhapDiem.Text = "Nhập điểm";
             this.btNhapDiem.UseVisualStyleBackColor = true;
+            this.btNhapDiem.Click += new System.EventHandler(this.btNhapDiem_Click);
             // 
             // btDoDaiDoan
             // 
-            this.btDoDaiDoan.Location = new System.Drawing.Point(538, 154);
+            this.btDoDaiDoan.Location = new System.Drawing.Point(485, 154);
             this.btDoDaiDoan.Name = "btDoDaiDoan";
             this.btDoDaiDoan.Size = new System.Drawing.Size(126, 38);
             this.btDoDaiDoan.TabIndex = 21;
             this.btDoDaiDoan.Text = "Độ dài đoạn";
             this.btDoDaiDoan.UseVisualStyleBackColor = true;
+            this.btDoDaiDoan.Click += new System.EventHandler(this.btDoDaiDoan_Click);
             // 
             // VolumeOfPrism
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 440);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.ClientSize = new System.Drawing.Size(636, 375);
             this.Controls.Add(this.btDoDaiDoan);
             this.Controls.Add(this.btNhapDiem);
             this.Controls.Add(this.txtChieuCaoLT);
@@ -253,7 +256,7 @@
             this.Controls.Add(this.lblDoDaiAC);
             this.Controls.Add(this.lblDoDaiBC);
             this.Controls.Add(this.lblDoDaiAB);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTT);
             this.Controls.Add(this.lblChieuCao);
             this.Controls.Add(this.lblDiemD);
             this.Controls.Add(this.lvlDiemC);
@@ -280,7 +283,7 @@
         private System.Windows.Forms.Label lvlDiemC;
         private System.Windows.Forms.Label lblDiemD;
         private System.Windows.Forms.Label lblChieuCao;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTT;
         private System.Windows.Forms.Label lblDoDaiAB;
         private System.Windows.Forms.Label lblDoDaiBC;
         private System.Windows.Forms.Label lblDoDaiAC;

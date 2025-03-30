@@ -178,3 +178,4 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
     + Nhập đầy đủ các dữ liệu bao gồm tọa độ điểm A,B,C,D và chiều cao h của tứ giác ABCD.
     + Nhấn nút ` Nhập điểm `, tính thể tích lăng trụ đứng ABCD.
     + Nhấn nút ` Độ dài cạnh `, hiển thị độ dài đoạn AB, BC, AC làm tròn đến 2 số lẻ.
+    + ![Hình minh họa](./images/BS3-2.png)
