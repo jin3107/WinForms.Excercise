@@ -197,5 +197,5 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
     + Nhấn nút ` Xóa `, xóa dấu check của các checkItems tên checklistbox. Sử dụng cú pháp
         * **chklistbox**.SetItemsCheckState(int index, CheckState.Unchecked);
     + Đổi màu chữ item trong listbox . Sử dụng chế độ DrawMode của listbox
-        * | lstPhanUng.DrawMode = DrawMode.OwnerDrawFixed; |
-          | lstPhanUng.DrawItem += lstPhanUng.DrawItem;    |
+        * lstPhanUng.DrawMode = DrawMode.OwnerDrawFixed;
+        * lstPhanUng.DrawItem += lstPhanUng.DrawItem;
