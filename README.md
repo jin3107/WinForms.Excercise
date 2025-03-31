@@ -225,6 +225,6 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
         |       |              | Lux                         |
         |       |              | Palmolive                   |
         |       |              | Dove                        |
-    + Khi chọn sản phẩm trên listbox, nhấn vào ` **Nhập** `, sản phầm được đưa vào listview danh sách, kiểm tra sản phẩm và loại có trên listview hay không, nếu có thì số lượng tăng thêm 1 ngược lại thì thêm vào danh sách với số lượng là 1.
-    + Khi chọn trên listview trong danh sách để xác định vị trí cần xóa, nhấn nút ` **Xóa** ` thì sản phẩm giảm số lượng 1, nếu số lượng sau khi giảm = 0 thì xóa khỏi listview danh sách.
-    + Khi nhấn ` **Tính** `, tính tổng số loại mặt hàng và tổng số lượng sản phẩm.
+    + Khi chọn sản phẩm trên listbox, nhấn vào ` Nhập `, sản phầm được đưa vào listview danh sách, kiểm tra sản phẩm và loại có trên listview hay không, nếu có thì số lượng tăng thêm 1 ngược lại thì thêm vào danh sách với số lượng là 1.
+    + Khi chọn trên listview trong danh sách để xác định vị trí cần xóa, nhấn nút ` Xóa ` thì sản phẩm giảm số lượng 1, nếu số lượng sau khi giảm = 0 thì xóa khỏi listview danh sách.
+    + Khi nhấn ` Tính `, tính tổng số loại mặt hàng và tổng số lượng sản phẩm.
