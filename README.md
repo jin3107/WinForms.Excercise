@@ -199,3 +199,4 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
     + Đổi màu chữ item trong listbox . Sử dụng chế độ DrawMode của listbox
         * lstPhanUng.DrawMode = DrawMode.OwnerDrawFixed;
         * lstPhanUng.DrawItem += lstPhanUng.DrawItem;
+    + ![Hình minh họa](./images/BS4-2.png)
