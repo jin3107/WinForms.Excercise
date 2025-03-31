@@ -30,6 +30,8 @@
 
 [Bài tập bổ sung 3](#bs3)
 
+[Bài tập bổ sung 4](#bs4)
+
 # Bài tập Chương 2
 
 <a name="2-33"></a>
@@ -179,3 +181,21 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
     + Nhấn nút ` Nhập điểm `, tính thể tích lăng trụ đứng ABCD.
     + Nhấn nút ` Độ dài cạnh `, hiển thị độ dài đoạn AB, BC, AC làm tròn đến 2 số lẻ.
     + ![Hình minh họa](./images/BS3-2.png)
+
+<a name="bs4"></a>
+### Bài tập bổ sung 4
+- Thiết kế form và thực hiện các phương trình phản ứng hóa học như hình ảnh:
+![Hình minh họa](./images/BS4-1.png)
+- Yêu cầu:
+    + Chọn các Oxide base có trong checklistbox bằng cách nhấn check vào các phần tử.
+    + Nhấn nút ` -> ` để tạo các phương trình phản ứng bằng các acid + oxide base theo công thức (acid + oxide base -> muối + nước).
+    + Với công thức acide được định nghĩa gồm H + gốc acid (ký hiệu hóa trị (1-2)).
+    + Công thức Oxide base gồm tên nguyên tố + hóa trị.
+    + Muối được tạo thành từ nguyên tố + gốc acid (tùy theo hóa trị của nguyên tố và gốc acid). Để tạo ký tự nhỏ (subscript) thì sử dụng như sau: 
+        * Ví dụ: $H_2O$ ("H\u2082O"), $H_2SO_4$ ("H\2082SO\u2084"),...
+        * Dấu lũy thừa: $x^5$ ("x\u2075")
+    + Nhấn nút ` Xóa `, xóa dấu check của các checkItems tên checklistbox. Sử dụng cú pháp
+        * **chklistbox**.SetItemsCheckState(int index, CheckState.Unchecked);
+    + Đổi màu chữ item trong listbox . Sử dụng chế độ DrawMode của listbox
+        * | lstPhanUng.DrawMode = DrawMode.OwnerDrawFixed; |
+          | lstPhanUng.DrawItem += lstPhanUng.DrawItem;    |
