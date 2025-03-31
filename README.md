@@ -217,8 +217,8 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
         |       |              | Panteen                     |
         |       |              | Clear                       |
         |       |              | Sunsilk                     |
-        |       |              | Panteen                     |
-        |  2    | Dầu xả       | TRESemmé                    |
+        |  2    | Dầu xả       | Panteen                     |
+        |       |              | TRESemmé                    |
         |       |              | L’Oréal Paris Elseve        |
         |       |              | Dove                        |
         |  3    | Sữa tắm      | Life bouy                   |
