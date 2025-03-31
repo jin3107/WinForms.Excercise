@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT-BS5", "BT-BS5\BT-BS5.csproj", "{DA8F9DB8-536A-4A87-8D91-2AE682B6152A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA8F9DB8-536A-4A87-8D91-2AE682B6152A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8F9DB8-536A-4A87-8D91-2AE682B6152A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8F9DB8-536A-4A87-8D91-2AE682B6152A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8F9DB8-536A-4A87-8D91-2AE682B6152A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33713078-DCD9-4174-AD3D-E76E6A354A81}
+	EndGlobalSection
+EndGlobal

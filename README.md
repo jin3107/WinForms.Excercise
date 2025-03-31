@@ -32,6 +32,8 @@
 
 [Bài tập bổ sung 4](#bs4)
 
+[Bài tập bổ sung 5](#bs5)
+
 # Bài tập Chương 2
 
 <a name="2-33"></a>
@@ -200,3 +202,29 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
         * lstPhanUng.DrawMode = DrawMode.OwnerDrawFixed;
         * lstPhanUng.DrawItem += lstPhanUng.DrawItem;
     + ![Hình minh họa](./images/BS4-2.png)
+
+<a name="bs5"></a>
+### Bài tập bổ sung 5
+- Thiết kế form như hình mình họa:
+![Hình minh họa](./images/BS5.png)
+- Yêu cầu:
+    + Thiết kế form.
+    + Khi fom thực thi, hinể thị các node treeview như hình minh họa.
+    + Khi nhấn vào các node cấp 0 (Level=0) thì hiển thị sản phẩm theo từng loại trên listbox.
+    +   | *STT* | *Node cấp 0* | *Node cấp 1*                |
+        |:-----:|:------------:|:---------------------------:|
+        |  1    | Dầu gội      | Header & Shoulder           |
+        |       |              | Panteen                     |
+        |       |              | Clear                       |
+        |       |              | Sunsilk                     |
+        |       |              | Panteen                     |
+        |  2    | Dầu xả       | TRESemmé                    |
+        |       |              | L’Oréal Paris Elseve        |
+        |       |              | Dove                        |
+        |  3    | Sữa tắm      | Life bouy                   |
+        |       |              | Lux                         |
+        |       |              | Palmolive                   |
+        |       |              | Dove                        |
+    + Khi chọn sản phẩm trên listbox, nhấn vào ` **Nhập** `, sản phầm được đưa vào listview danh sách, kiểm tra sản phẩm và loại có trên listview hay không, nếu có thì số lượng tăng thêm 1 ngược lại thì thêm vào danh sách với số lượng là 1.
+    + Khi chọn trên listview trong danh sách để xác định vị trí cần xóa, nhấn nút ` **Xóa** ` thì sản phẩm giảm số lượng 1, nếu số lượng sau khi giảm = 0 thì xóa khỏi listview danh sách.
+    + Khi nhấn ` **Tính** `, tính tổng số loại mặt hàng và tổng số lượng sản phẩm.
