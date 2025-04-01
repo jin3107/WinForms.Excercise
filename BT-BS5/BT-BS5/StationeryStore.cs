@@ -148,7 +148,6 @@ namespace BT_BS5
 
             // Cách 2 đáp án chuẩn
             int tongSoLuongSanPham = 0;
-            string loaiSanPham = tvPhanLoai.SelectedNode.Text;
             List<string> dsLoai = new List<string>();
             foreach (ListViewItem item in lvDonHang.Items)
             {
