@@ -134,18 +134,29 @@ namespace BT_BS5
 
         private void btTinh_Click(object sender, EventArgs e)
         {
-            int tongSoLuongSanPham = 0, tongSoLoai = 0;
-            List<ListViewItem> loai = new List<ListViewItem>();
+            // Cách 1 theo đề
+            //int tongSoLuongSanPham = 0, tongSoLoai = 0;
+            //List<ListViewItem> loai = new List<ListViewItem>();
+            //foreach (ListViewItem item in lvDonHang.Items)
+            //{
+            //    int soLuong = int.Parse(item.SubItems[2].Text);
+            //    tongSoLuongSanPham += soLuong;
+
+            //    loai.Add(item);
+            //    tongSoLoai = loai.Count;
+            //}
+
+            // Cách 2 đáp án chuẩn
+            int tongSoLuongSanPham = 0;
+            string loaiSanPham = tvPhanLoai.SelectedNode.Text;
+            List<string> dsLoai = new List<string>();
             foreach (ListViewItem item in lvDonHang.Items)
             {
-                int soLuong = int.Parse(item.SubItems[2].Text);
-                tongSoLuongSanPham += soLuong;
-
-                loai.Add(item);
-                tongSoLoai = loai.Count;
+                tongSoLuongSanPham += int.Parse(item.SubItems[2].Text);
+                dsLoai.Add(item.SubItems[3].Text);
             }
             lblTSLuong.Text = "Tổng số lượng: " + tongSoLuongSanPham.ToString();
-            lblTSLoai.Text = "Tổng số loại: " + tongSoLoai.ToString();
+            lblTSLoai.Text = "Tổng số loại: " + dsLoai.Distinct().Count();
         }
     }
 }
