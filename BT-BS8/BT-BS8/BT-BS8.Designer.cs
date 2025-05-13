@@ -112,6 +112,7 @@
             this.lstvHoatDongChinh.TabIndex = 4;
             this.lstvHoatDongChinh.UseCompatibleStateImageBehavior = false;
             this.lstvHoatDongChinh.View = System.Windows.Forms.View.Details;
+            this.lstvHoatDongChinh.SelectedIndexChanged += new System.EventHandler(this.lstvHoatDongChinh_SelectedIndexChanged);
             // 
             // colHoatDongChinh
             // 
@@ -140,6 +141,7 @@
             this.lstbDSChienDich.Name = "lstbDSChienDich";
             this.lstbDSChienDich.Size = new System.Drawing.Size(248, 180);
             this.lstbDSChienDich.TabIndex = 6;
+            this.lstbDSChienDich.SelectedIndexChanged += new System.EventHandler(this.lstbDSChienDich_SelectedIndexChanged);
             // 
             // lblChiTiet
             // 
@@ -157,7 +159,7 @@
             this.dgvCCCD.Name = "dgvCCCD";
             this.dgvCCCD.RowHeadersWidth = 51;
             this.dgvCCCD.RowTemplate.Height = 24;
-            this.dgvCCCD.Size = new System.Drawing.Size(458, 179);
+            this.dgvCCCD.Size = new System.Drawing.Size(462, 179);
             this.dgvCCCD.TabIndex = 8;
             // 
             // grbCTCD
@@ -193,6 +195,7 @@
             this.btnXoa.TabIndex = 14;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnCapNhat
             // 
@@ -203,6 +206,7 @@
             this.btnCapNhat.TabIndex = 13;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnThem
             // 
@@ -213,6 +217,7 @@
             this.btnThem.TabIndex = 12;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // cbbTCTH
             // 
