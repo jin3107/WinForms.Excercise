@@ -96,6 +96,7 @@
             this.lstbDSTinh.Name = "lstbDSTinh";
             this.lstbDSTinh.Size = new System.Drawing.Size(248, 180);
             this.lstbDSTinh.TabIndex = 3;
+            this.lstbDSTinh.SelectedIndexChanged += new System.EventHandler(this.lstbDSTinh_SelectedIndexChanged);
             // 
             // lstvHoatDongChinh
             // 
