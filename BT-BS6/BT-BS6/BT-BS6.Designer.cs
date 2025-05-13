@@ -32,18 +32,18 @@
             this.lblDanhMuc = new System.Windows.Forms.Label();
             this.clbDanhMuc = new System.Windows.Forms.CheckedListBox();
             this.grbTT = new System.Windows.Forms.GroupBox();
-            this.grbSapXep = new System.Windows.Forms.GroupBox();
-            this.lblMaVT = new System.Windows.Forms.Label();
-            this.lblTenVT = new System.Windows.Forms.Label();
-            this.lblLuong = new System.Windows.Forms.Label();
-            this.txtMaVT = new System.Windows.Forms.TextBox();
-            this.txtTenVT = new System.Windows.Forms.TextBox();
-            this.txtLuong = new System.Windows.Forms.TextBox();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
-            this.rdbtnTang = new System.Windows.Forms.RadioButton();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.txtLuong = new System.Windows.Forms.TextBox();
+            this.txtTenVT = new System.Windows.Forms.TextBox();
+            this.txtMaVT = new System.Windows.Forms.TextBox();
+            this.lblLuong = new System.Windows.Forms.Label();
+            this.lblTenVT = new System.Windows.Forms.Label();
+            this.lblMaVT = new System.Windows.Forms.Label();
+            this.grbSapXep = new System.Windows.Forms.GroupBox();
             this.rdbtnGiam = new System.Windows.Forms.RadioButton();
+            this.rdbtnTang = new System.Windows.Forms.RadioButton();
             this.lblLKNV = new System.Windows.Forms.Label();
             this.lstvNhanVien = new System.Windows.Forms.ListView();
             this.colSTT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -101,75 +101,16 @@
             this.grbTT.TabStop = false;
             this.grbTT.Text = "Thông tin chi tiết";
             // 
-            // grbSapXep
+            // btnHuy
             // 
-            this.grbSapXep.Controls.Add(this.rdbtnGiam);
-            this.grbSapXep.Controls.Add(this.rdbtnTang);
-            this.grbSapXep.Location = new System.Drawing.Point(724, 110);
-            this.grbSapXep.Name = "grbSapXep";
-            this.grbSapXep.Size = new System.Drawing.Size(292, 138);
-            this.grbSapXep.TabIndex = 4;
-            this.grbSapXep.TabStop = false;
-            this.grbSapXep.Text = "Sắp xếp theo lương";
-            // 
-            // lblMaVT
-            // 
-            this.lblMaVT.AutoSize = true;
-            this.lblMaVT.Location = new System.Drawing.Point(19, 34);
-            this.lblMaVT.Name = "lblMaVT";
-            this.lblMaVT.Size = new System.Drawing.Size(82, 22);
-            this.lblMaVT.TabIndex = 0;
-            this.lblMaVT.Text = "Mã vị trí: ";
-            // 
-            // lblTenVT
-            // 
-            this.lblTenVT.AutoSize = true;
-            this.lblTenVT.Location = new System.Drawing.Point(19, 93);
-            this.lblTenVT.Name = "lblTenVT";
-            this.lblTenVT.Size = new System.Drawing.Size(85, 22);
-            this.lblTenVT.TabIndex = 1;
-            this.lblTenVT.Text = "Tên vị trí:";
-            // 
-            // lblLuong
-            // 
-            this.lblLuong.AutoSize = true;
-            this.lblLuong.Location = new System.Drawing.Point(19, 150);
-            this.lblLuong.Name = "lblLuong";
-            this.lblLuong.Size = new System.Drawing.Size(65, 22);
-            this.lblLuong.TabIndex = 2;
-            this.lblLuong.Text = "Lương:";
-            // 
-            // txtMaVT
-            // 
-            this.txtMaVT.Location = new System.Drawing.Point(107, 28);
-            this.txtMaVT.Name = "txtMaVT";
-            this.txtMaVT.Size = new System.Drawing.Size(199, 28);
-            this.txtMaVT.TabIndex = 3;
-            // 
-            // txtTenVT
-            // 
-            this.txtTenVT.Location = new System.Drawing.Point(110, 87);
-            this.txtTenVT.Name = "txtTenVT";
-            this.txtTenVT.Size = new System.Drawing.Size(196, 28);
-            this.txtTenVT.TabIndex = 4;
-            // 
-            // txtLuong
-            // 
-            this.txtLuong.Location = new System.Drawing.Point(107, 144);
-            this.txtLuong.Name = "txtLuong";
-            this.txtLuong.Size = new System.Drawing.Size(199, 28);
-            this.txtLuong.TabIndex = 5;
-            // 
-            // btnThem
-            // 
-            this.btnThem.BackColor = System.Drawing.Color.LightGreen;
-            this.btnThem.Location = new System.Drawing.Point(323, 24);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(107, 43);
-            this.btnThem.TabIndex = 6;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = false;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.btnHuy.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnHuy.Location = new System.Drawing.Point(323, 140);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(107, 43);
+            this.btnHuy.TabIndex = 8;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.UseVisualStyleBackColor = false;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnCapNhat
             // 
@@ -182,28 +123,75 @@
             this.btnCapNhat.UseVisualStyleBackColor = false;
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
-            // btnHuy
+            // btnThem
             // 
-            this.btnHuy.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btnHuy.Location = new System.Drawing.Point(323, 140);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(107, 43);
-            this.btnHuy.TabIndex = 8;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = false;
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            this.btnThem.BackColor = System.Drawing.Color.LightGreen;
+            this.btnThem.Location = new System.Drawing.Point(323, 24);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(107, 43);
+            this.btnThem.TabIndex = 6;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // rdbtnTang
+            // txtLuong
             // 
-            this.rdbtnTang.AutoSize = true;
-            this.rdbtnTang.Location = new System.Drawing.Point(21, 46);
-            this.rdbtnTang.Name = "rdbtnTang";
-            this.rdbtnTang.Size = new System.Drawing.Size(197, 26);
-            this.rdbtnTang.TabIndex = 0;
-            this.rdbtnTang.TabStop = true;
-            this.rdbtnTang.Text = "Theo lương tăng dần";
-            this.rdbtnTang.UseVisualStyleBackColor = true;
-            this.rdbtnTang.CheckedChanged += new System.EventHandler(this.rdbtnTang_CheckedChanged);
+            this.txtLuong.Location = new System.Drawing.Point(107, 144);
+            this.txtLuong.Name = "txtLuong";
+            this.txtLuong.Size = new System.Drawing.Size(199, 28);
+            this.txtLuong.TabIndex = 5;
+            // 
+            // txtTenVT
+            // 
+            this.txtTenVT.Location = new System.Drawing.Point(110, 87);
+            this.txtTenVT.Name = "txtTenVT";
+            this.txtTenVT.Size = new System.Drawing.Size(196, 28);
+            this.txtTenVT.TabIndex = 4;
+            // 
+            // txtMaVT
+            // 
+            this.txtMaVT.Location = new System.Drawing.Point(107, 28);
+            this.txtMaVT.Name = "txtMaVT";
+            this.txtMaVT.Size = new System.Drawing.Size(199, 28);
+            this.txtMaVT.TabIndex = 3;
+            // 
+            // lblLuong
+            // 
+            this.lblLuong.AutoSize = true;
+            this.lblLuong.Location = new System.Drawing.Point(19, 150);
+            this.lblLuong.Name = "lblLuong";
+            this.lblLuong.Size = new System.Drawing.Size(65, 22);
+            this.lblLuong.TabIndex = 2;
+            this.lblLuong.Text = "Lương:";
+            // 
+            // lblTenVT
+            // 
+            this.lblTenVT.AutoSize = true;
+            this.lblTenVT.Location = new System.Drawing.Point(19, 93);
+            this.lblTenVT.Name = "lblTenVT";
+            this.lblTenVT.Size = new System.Drawing.Size(85, 22);
+            this.lblTenVT.TabIndex = 1;
+            this.lblTenVT.Text = "Tên vị trí:";
+            // 
+            // lblMaVT
+            // 
+            this.lblMaVT.AutoSize = true;
+            this.lblMaVT.Location = new System.Drawing.Point(19, 34);
+            this.lblMaVT.Name = "lblMaVT";
+            this.lblMaVT.Size = new System.Drawing.Size(82, 22);
+            this.lblMaVT.TabIndex = 0;
+            this.lblMaVT.Text = "Mã vị trí: ";
+            // 
+            // grbSapXep
+            // 
+            this.grbSapXep.Controls.Add(this.rdbtnGiam);
+            this.grbSapXep.Controls.Add(this.rdbtnTang);
+            this.grbSapXep.Location = new System.Drawing.Point(724, 110);
+            this.grbSapXep.Name = "grbSapXep";
+            this.grbSapXep.Size = new System.Drawing.Size(292, 138);
+            this.grbSapXep.TabIndex = 4;
+            this.grbSapXep.TabStop = false;
+            this.grbSapXep.Text = "Sắp xếp theo lương";
             // 
             // rdbtnGiam
             // 
@@ -216,6 +204,18 @@
             this.rdbtnGiam.Text = "Theo lương giảm dần";
             this.rdbtnGiam.UseVisualStyleBackColor = true;
             this.rdbtnGiam.CheckedChanged += new System.EventHandler(this.rdbtnGiam_CheckedChanged);
+            // 
+            // rdbtnTang
+            // 
+            this.rdbtnTang.AutoSize = true;
+            this.rdbtnTang.Location = new System.Drawing.Point(21, 46);
+            this.rdbtnTang.Name = "rdbtnTang";
+            this.rdbtnTang.Size = new System.Drawing.Size(197, 26);
+            this.rdbtnTang.TabIndex = 0;
+            this.rdbtnTang.TabStop = true;
+            this.rdbtnTang.Text = "Theo lương tăng dần";
+            this.rdbtnTang.UseVisualStyleBackColor = true;
+            this.rdbtnTang.CheckedChanged += new System.EventHandler(this.rdbtnTang_CheckedChanged);
             // 
             // lblLKNV
             // 
@@ -277,7 +277,7 @@
             this.Controls.Add(this.lblDanhMuc);
             this.Controls.Add(this.lblTTVTVL);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "BT_BS6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BT_BS6";
