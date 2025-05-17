@@ -25,7 +25,7 @@ namespace BT_BS8
 
         private void BT_BS8_Load(object sender, EventArgs e)
         {
-            connection = new SqlConnection(@"Data Source=localhost;Initial Catalog=QLCD;Integrated Security=True;");
+            connection = new SqlConnection(@"Data Source=localhost;Initial Catalog=ENVIROMENT;Integrated Security=True;");
             HienThiListBoxTinh();
             HienThiCombobox();
 
@@ -67,7 +67,7 @@ namespace BT_BS8
                 $"WHERE TK.MaDD = DD.MaDD AND DD.Tinh LIKE N'{tinh}'";
             HienThiListView(query);
 
-            string newQuery = "SELECT TenCD, Mota, Ngaybd, Ngaykt, MaTC " +
+            string newQuery = "SELECT DISTINCT TenCD, Mota, Ngaybd, Ngaykt, MaTC " +
                 "FROM CHIENDICH CD, TRIENKHAICHIENDICH TK, DIADIEM DD " +
                 $"WHERE CD.MaCD = TK.MaCD AND TK.MaDD = DD.MaDD AND DD.Tinh LIKE N'{tinh}'";
             HienThiDataGridView(newQuery);
@@ -168,15 +168,6 @@ namespace BT_BS8
             return result;
         }
 
-        //private void LuuDL(int maToChuc)
-        //{
-        //    string query = $"INSERT INTO CHIENDICH (TenCD, Mota, Ngaybd, Ngaykt, MaTC) VALUES(N'{txtTenChienDich.Text}', N'{txtMoTa.Text}', '{dtpNgayBD.Value.ToShortDateString()}', '{dtpNgayKT.Value.ToShortDateString()}', {maToChuc})";
-        //    SqlCommand cmd = new SqlCommand(query, connection);
-        //    connection.Open();
-        //    cmd.ExecuteNonQuery();
-        //    connection.Close();
-        //}
-
         private void LuuDL(int maToChuc)
         {
             string query = "INSERT INTO CHIENDICH (TenCD, Mota, Ngaybd, Ngaykt, MaTC) VALUES (@TenCD, @Mota, @Ngaybd, @Ngaykt, @MaTC)";
@@ -265,14 +256,14 @@ namespace BT_BS8
         private void lstbDSChienDich_SelectedIndexChanged(object sender, EventArgs e)
         {
             string chienDich = lstbDSChienDich.SelectedItem.ToString();
-            string query = "SELECT TenCD, Mota, Ngaybd, Ngaykt, MaTC " +
+            string query = "SELECT DISTINCT TenCD, Mota, Ngaybd, Ngaykt, MaTC " +
                 "FROM CHIENDICH CD, TRIENKHAICHIENDICH TK, DIADIEM DD " +
                 $"WHERE CD.MaCD = TK.MaCD AND TK.MaDD = DD.MaDD AND CD.TenCD LIKE N'{chienDich}'";
             HienThiDataGridView(query);
 
             if (lstbDSChienDich.SelectedItems.Count > 0)
             {
-                string newQuery = "SELECT TK.MaCD, CD.TenCD, CD.Mota, CD.Ngaybd, CD.Ngaykt, " +
+                string newQuery = "SELECT DISTINCT TK.MaCD, CD.TenCD, CD.Mota, CD.Ngaybd, CD.Ngaykt, " +
                               "(SELECT TenTC FROM TOCHUC WHERE MaTC = CD.MaTC) AS TenTC " +
                               "FROM CHIENDICH CD, TRIENKHAICHIENDICH TK " +
                               $"WHERE CD.MaCD = TK.MaCD AND CD.TenCD = N'{chienDich}'";
