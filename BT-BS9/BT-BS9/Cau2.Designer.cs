@@ -32,15 +32,15 @@
             this.lblDMDD = new System.Windows.Forms.Label();
             this.lblLK = new System.Windows.Forms.Label();
             this.grbTTCT = new System.Windows.Forms.GroupBox();
-            this.lblMaDD = new System.Windows.Forms.Label();
-            this.lblTenDD = new System.Windows.Forms.Label();
-            this.lblTinhThanhPho = new System.Windows.Forms.Label();
-            this.txtMaDD = new System.Windows.Forms.TextBox();
-            this.txtTenDD = new System.Windows.Forms.TextBox();
-            this.cbbTinhTP = new System.Windows.Forms.ComboBox();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnGhi = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnGhi = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.cbbTinhTP = new System.Windows.Forms.ComboBox();
+            this.txtTenDD = new System.Windows.Forms.TextBox();
+            this.txtMaDD = new System.Windows.Forms.TextBox();
+            this.lblTinhThanhPho = new System.Windows.Forms.Label();
+            this.lblTenDD = new System.Windows.Forms.Label();
+            this.lblMaDD = new System.Windows.Forms.Label();
             this.lstvTourDiaDanh = new System.Windows.Forms.ListView();
             this.colSTT = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colTenTour = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -100,64 +100,15 @@
             this.grbTTCT.TabStop = false;
             this.grbTTCT.Text = "Thông tin chi tiết";
             // 
-            // lblMaDD
+            // btnCapNhat
             // 
-            this.lblMaDD.AutoSize = true;
-            this.lblMaDD.Location = new System.Drawing.Point(22, 41);
-            this.lblMaDD.Name = "lblMaDD";
-            this.lblMaDD.Size = new System.Drawing.Size(68, 20);
-            this.lblMaDD.TabIndex = 0;
-            this.lblMaDD.Text = "Mã DD:";
-            // 
-            // lblTenDD
-            // 
-            this.lblTenDD.AutoSize = true;
-            this.lblTenDD.Location = new System.Drawing.Point(22, 82);
-            this.lblTenDD.Name = "lblTenDD";
-            this.lblTenDD.Size = new System.Drawing.Size(110, 20);
-            this.lblTenDD.TabIndex = 1;
-            this.lblTenDD.Text = "Tên địa danh:";
-            // 
-            // lblTinhThanhPho
-            // 
-            this.lblTinhThanhPho.AutoSize = true;
-            this.lblTinhThanhPho.Location = new System.Drawing.Point(22, 122);
-            this.lblTinhThanhPho.Name = "lblTinhThanhPho";
-            this.lblTinhThanhPho.Size = new System.Drawing.Size(129, 20);
-            this.lblTinhThanhPho.TabIndex = 2;
-            this.lblTinhThanhPho.Text = "Tỉnh/Thành phố:";
-            // 
-            // txtMaDD
-            // 
-            this.txtMaDD.Location = new System.Drawing.Point(167, 34);
-            this.txtMaDD.Name = "txtMaDD";
-            this.txtMaDD.Size = new System.Drawing.Size(219, 27);
-            this.txtMaDD.TabIndex = 3;
-            // 
-            // txtTenDD
-            // 
-            this.txtTenDD.Location = new System.Drawing.Point(167, 75);
-            this.txtTenDD.Name = "txtTenDD";
-            this.txtTenDD.Size = new System.Drawing.Size(219, 27);
-            this.txtTenDD.TabIndex = 4;
-            // 
-            // cbbTinhTP
-            // 
-            this.cbbTinhTP.FormattingEnabled = true;
-            this.cbbTinhTP.Location = new System.Drawing.Point(167, 114);
-            this.cbbTinhTP.Name = "cbbTinhTP";
-            this.cbbTinhTP.Size = new System.Drawing.Size(219, 28);
-            this.cbbTinhTP.TabIndex = 5;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(423, 30);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(82, 34);
-            this.btnThem.TabIndex = 6;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            this.btnCapNhat.Location = new System.Drawing.Point(423, 111);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(82, 34);
+            this.btnCapNhat.TabIndex = 8;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // btnGhi
             // 
@@ -169,15 +120,64 @@
             this.btnGhi.UseVisualStyleBackColor = true;
             this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
             // 
-            // btnCapNhat
+            // btnThem
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(423, 111);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(82, 34);
-            this.btnCapNhat.TabIndex = 8;
-            this.btnCapNhat.Text = "Cập nhật";
-            this.btnCapNhat.UseVisualStyleBackColor = true;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            this.btnThem.Location = new System.Drawing.Point(423, 30);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(82, 34);
+            this.btnThem.TabIndex = 6;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // cbbTinhTP
+            // 
+            this.cbbTinhTP.FormattingEnabled = true;
+            this.cbbTinhTP.Location = new System.Drawing.Point(167, 114);
+            this.cbbTinhTP.Name = "cbbTinhTP";
+            this.cbbTinhTP.Size = new System.Drawing.Size(219, 28);
+            this.cbbTinhTP.TabIndex = 5;
+            // 
+            // txtTenDD
+            // 
+            this.txtTenDD.Location = new System.Drawing.Point(167, 75);
+            this.txtTenDD.Name = "txtTenDD";
+            this.txtTenDD.Size = new System.Drawing.Size(219, 27);
+            this.txtTenDD.TabIndex = 4;
+            // 
+            // txtMaDD
+            // 
+            this.txtMaDD.Location = new System.Drawing.Point(167, 34);
+            this.txtMaDD.Name = "txtMaDD";
+            this.txtMaDD.Size = new System.Drawing.Size(219, 27);
+            this.txtMaDD.TabIndex = 3;
+            // 
+            // lblTinhThanhPho
+            // 
+            this.lblTinhThanhPho.AutoSize = true;
+            this.lblTinhThanhPho.Location = new System.Drawing.Point(22, 122);
+            this.lblTinhThanhPho.Name = "lblTinhThanhPho";
+            this.lblTinhThanhPho.Size = new System.Drawing.Size(129, 20);
+            this.lblTinhThanhPho.TabIndex = 2;
+            this.lblTinhThanhPho.Text = "Tỉnh/Thành phố:";
+            // 
+            // lblTenDD
+            // 
+            this.lblTenDD.AutoSize = true;
+            this.lblTenDD.Location = new System.Drawing.Point(22, 82);
+            this.lblTenDD.Name = "lblTenDD";
+            this.lblTenDD.Size = new System.Drawing.Size(110, 20);
+            this.lblTenDD.TabIndex = 1;
+            this.lblTenDD.Text = "Tên địa danh:";
+            // 
+            // lblMaDD
+            // 
+            this.lblMaDD.AutoSize = true;
+            this.lblMaDD.Location = new System.Drawing.Point(22, 41);
+            this.lblMaDD.Name = "lblMaDD";
+            this.lblMaDD.Size = new System.Drawing.Size(68, 20);
+            this.lblMaDD.TabIndex = 0;
+            this.lblMaDD.Text = "Mã DD:";
             // 
             // lstvTourDiaDanh
             // 
@@ -235,6 +235,7 @@
             this.picAnhMinhHoa.Location = new System.Drawing.Point(632, 274);
             this.picAnhMinhHoa.Name = "picAnhMinhHoa";
             this.picAnhMinhHoa.Size = new System.Drawing.Size(218, 193);
+            this.picAnhMinhHoa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picAnhMinhHoa.TabIndex = 7;
             this.picAnhMinhHoa.TabStop = false;
             // 
@@ -261,7 +262,7 @@
             this.Controls.Add(this.lblDMDD);
             this.Controls.Add(this.lblTTCT);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Cau2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cau2";

@@ -106,10 +106,11 @@ namespace BT_BS9
             foreach (DataRow dr in dt.Rows)
             {
                 string maDD = dr[0].ToString();
-                txtMaDD.Text = maDD;
+                string kq = maDD.Replace(" ", "");
+                txtMaDD.Text = kq;
                 txtTenDD.Text = dr[1].ToString();
                 cbbTinhTP.Text = dr[2].ToString();
-                string imagePath = $"{maDD}.jpg";
+                string imagePath = $"{kq}.jpg";
                 if (System.IO.File.Exists(imagePath))
                 {
                     picAnhMinhHoa.Image = Image.FromFile(imagePath);
