@@ -52,10 +52,19 @@
     <Compile Include="Cau1.Designer.cs">
       <DependentUpon>Cau1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cau2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cau2.Designer.cs">
+      <DependentUpon>Cau2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Cau1.resx">
       <DependentUpon>Cau1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cau2.resx">
+      <DependentUpon>Cau2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
