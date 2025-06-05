@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,47 @@ namespace Bai2
             txtTongTien.Text = tongTien.ToString("N0", info);
             txtGiamGia.Text = giamGia.ToString("N0", info);
             txtTienPT.Text = tienPT.ToString("N0", info);
+
+            GhiFile();
+        }
+
+        private void GhiFile()
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveDialog.FilterIndex = 1;
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter writer = new StreamWriter(saveDialog.FileName))
+                {
+                    CultureInfo info = new CultureInfo("en-US");
+
+                    writer.WriteLine("DANH SÁCH SÁCH GIÁO KHOA\n");
+                    writer.WriteLine("{0,-5} {1,-15} {2,-8} {3,10} {4,10} {5,15}",
+                                     "STT", "Tên Sách", "Lớp", "Số Lượng", "Đơn Giá", "Thành Tiền");
+                    writer.WriteLine(new string('-', 70)); // gạch ngang
+
+                    foreach (ListViewItem item in lstvDS.Items)
+                    {
+                        writer.WriteLine("{0,-5} {1,-15} {2,-8} {3,10} {4,10} {5,15}",
+                            item.SubItems[0].Text,
+                            item.SubItems[1].Text,
+                            item.SubItems[2].Text,
+                            item.SubItems[3].Text,
+                            item.SubItems[4].Text,
+                            item.SubItems[5].Text);
+                    }
+
+                    writer.WriteLine(new string('-', 70));
+                    writer.WriteLine($"Tổng tiền: {txtTongTien.Text}");
+                    writer.WriteLine($"Giảm giá: {txtGiamGia.Text}");
+                    writer.WriteLine($"Thành tiền: {txtTienPT.Text}");
+
+                }
+                MessageBox.Show("Đã ghi file thành công!", "Thông báo",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public Form1()

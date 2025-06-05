@@ -217,10 +217,15 @@ namespace BT_BS8
 
         private void CapNhatDL(int maTC)
         {
-            string query = $"UPDATE CHIENDICH SET TenCD = N'{txtTenChienDich.Text}', Mota = N'{txtMoTa.Text}', " +
-                          $"Ngaybd = '{dtpNgayBD.Value.ToShortDateString()}', Ngaykt = '{dtpNgayKT.Value.ToShortDateString()}', " +
-                          $"MaTC = {maTC} WHERE MaCD = '{txtMaChienDich.Text}'";
+            string query = "UPDATE CHIENDICH SET TenCD = @TenCD, Mota = @Mota, Ngaybd = @Ngaybd, Ngaykt = @Ngaykt, MaTC = @MaTC WHERE MaCD = @MaCD";
             SqlCommand sqlCommand = new SqlCommand(query, connection);
+            sqlCommand.Parameters.AddWithValue("@TenCD", txtTenChienDich.Text);
+            sqlCommand.Parameters.AddWithValue("@Mota", txtMoTa.Text);
+            sqlCommand.Parameters.AddWithValue("@Ngaybd", dtpNgayBD.Value);
+            sqlCommand.Parameters.AddWithValue("@Ngaykt", dtpNgayKT.Value);
+            sqlCommand.Parameters.AddWithValue("@MaTC", maTC);
+            sqlCommand.Parameters.AddWithValue("@MaCD", txtMaChienDich.Text);
+
             connection.Open();
             sqlCommand.ExecuteNonQuery();
             connection.Close();
