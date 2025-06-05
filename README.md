@@ -34,6 +34,8 @@
 
 [Bài tập bổ sung 5](#bs5)
 
+[Bài tập bổ sung 6](#bs6)
+
 # Bài tập Chương 2
 
 <a name="2-33"></a>
@@ -228,3 +230,18 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
     + Khi chọn sản phẩm trên listbox, nhấn vào ` Nhập `, sản phầm được đưa vào listview danh sách, kiểm tra sản phẩm và loại có trên listview hay không, nếu có thì số lượng tăng thêm 1 ngược lại thì thêm vào danh sách với số lượng là 1.
     + Khi chọn trên listview trong danh sách để xác định vị trí cần xóa, nhấn nút ` Xóa ` thì sản phẩm giảm số lượng 1, nếu số lượng sau khi giảm = 0 thì xóa khỏi listview danh sách.
     + Khi nhấn ` Tính `, tính tổng số loại mặt hàng và tổng số lượng sản phẩm.
+
+<a name="bs6"></a>
+### Bài tập bổ sung 6
+- Thiết kế form như hình bên dưới:
+![Hình minh họa](./images/BS6-1.png)
+- Yêu cầu:
+    + Thiết kế form.
+    + Khi form load thì vị trí việc làm sẽ hiện lên ListBox.
+    + Khi người dùng chọn vị trí việc làm, các thông tin về vị trí việc làm sẽ được hiển thị trên các TextBox tương ứng.
+    + Khi người dùng nhập thông tin vào TextBox và nhấn nút Thêm thì thông tin sẽ được thêm vào ListBox.
+    + Khi người dùng chọn 1 vị trí việc làm trên ListBox và nhấn nút Cập nhật thì thông tin sẽ được cập nhật vào ListBox.
+    + Khi người dùng chọn 1 vị trí việc làm trên ListBox và nhấn nút Xóa thì thông tin sẽ được xóa khỏi ListBox.
+    + Khi chọn 1 vị trí việc làm trên ListBox thì thông tin nhân viên sẽ được hiển thị trên ListView tương ứng.
+    + Sắp xếp nhân viên theo Lương tăng dần hoặc giảm dần bằng cách nhấn RadioButton tương ứng.
+    + ![Hình minh họa](./images/BS6-2.png)
