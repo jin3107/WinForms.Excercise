@@ -2,25 +2,25 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
-namespace QuanLySach
+namespace Bai1
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
         private SqlConnection cn;
 
-        public Form1()
+        public Form2()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
             cn = new SqlConnection("Data Source=localhost;Initial Catalog=QLNSN;Integrated Security=True;");
             HienThiListBox();
@@ -109,9 +109,14 @@ namespace QuanLySach
             }
             txtMaTL.Clear();
             txtTenTL.Clear();
-            MessageBox.Show("Ghi thành công", "Thông báo", 
+            MessageBox.Show("Ghi thành công", "Thông báo",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
             HienThiListBox();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

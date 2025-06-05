@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QuanLySach.Properties
+namespace Bai1.Properties
 {
 
 
