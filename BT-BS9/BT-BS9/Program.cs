@@ -16,7 +16,7 @@ namespace BT_BS9
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Cau2());
+            Application.Run(new Cau1());
         }
     }
 }

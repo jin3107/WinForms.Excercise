@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{42F2F4C3-0EC9-434D-86E3-776E76F54847}</ProjectGuid>
+    <ProjectGuid>{D29D3764-559C-49CB-AC7C-4F7A02CF582B}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ChienDichBVMT</RootNamespace>
-    <AssemblyName>ChienDichBVMT</AssemblyName>
+    <RootNamespace>Bai2</RootNamespace>
+    <AssemblyName>Bai2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

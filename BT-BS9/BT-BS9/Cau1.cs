@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,10 +17,11 @@ namespace BT_BS9
 
         private void btnTinhTien_Click(object sender, EventArgs e)
         {
+            CultureInfo info = new CultureInfo("en-US");
             int tongTien = 0;
             foreach (ListViewItem item in lstvDSTK.Items)
             {
-                tongTien += int.Parse(item.SubItems[5].Text);
+                tongTien += int.Parse(item.SubItems[5].Text, NumberStyles.AllowThousands, info);
             }
             double giamGia = 0;
             if (tongTien > 10000)
@@ -31,9 +33,9 @@ namespace BT_BS9
                 giamGia = tongTien * 0.03;
             }
             double tienPhaiTra = tongTien - giamGia;
-            txtTongTien.Text = tongTien.ToString("N0");
-            txtGiamGia.Text = giamGia.ToString("N0");
-            txtTienPhaiTra.Text = tienPhaiTra.ToString("N0");
+            txtTongTien.Text = tongTien.ToString("N0", info);
+            txtGiamGia.Text = giamGia.ToString("N0", info);
+            txtTienPhaiTra.Text = tienPhaiTra.ToString("N0", info);
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -42,12 +44,14 @@ namespace BT_BS9
             int donGia = GiaSanPham(sanPham);
             int soLuong = (int)numSoLuong.Value;
             int thanhTien = soLuong * donGia;
+
+            CultureInfo info = new CultureInfo("en-US");
             ListViewItem item = new ListViewItem((lstvDSTK.Items.Count + 1).ToString());
             item.SubItems.Add(cbbPhanXuong.Text + "/" + cbbChuyen.Text);
             item.SubItems.Add(sanPham);
             item.SubItems.Add(soLuong.ToString());
             item.SubItems.Add(donGia.ToString());
-            item.SubItems.Add(thanhTien.ToString());
+            item.SubItems.Add(thanhTien.ToString("N0", info));
             lstvDSTK.Items.Add(item);
         }
 

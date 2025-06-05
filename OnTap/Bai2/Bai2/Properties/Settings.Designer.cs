@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PhieuDKMuaSach.Properties
+namespace Bai2.Properties
 {
 
 
