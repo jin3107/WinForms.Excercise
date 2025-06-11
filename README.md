@@ -1,6 +1,6 @@
 > Thực hiện: **Huỳnh Tấn Chương**
 >
-> Cập nhật lần cuối: **00/00/0000**
+> Cập nhật lần cuối: **11/06/2025**
 
 # Bài tập Winform bằng ngôn ngữ C#
 
