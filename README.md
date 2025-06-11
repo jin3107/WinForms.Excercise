@@ -36,6 +36,8 @@
 
 [Bài tập bổ sung 6](#bs6)
 
+[bài tập bổ sung 7](#bs7)
+
 # Bài tập Chương 2
 
 <a name="2-33"></a>
@@ -142,9 +144,7 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
     + Khi nhấn Button **Tạo Mới**, sẽ xóa toàn bộ món ăn ở *D*SMonAnChon** (trước khi oMoi, hỏi người dùng có chắc chắn chưa).
     + Khi nhấn **Kết thúc**, kết thúc xử lý Form.
 
-<a name="10-39"></a>
-### Bài 10 - trang 39
-
+# Bài tập bổ sung
 
 <a name="bs1"></a>
 ### Bài tập bổ sung 1
@@ -245,3 +245,19 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
     + Khi chọn 1 vị trí việc làm trên ListBox thì thông tin nhân viên sẽ được hiển thị trên ListView tương ứng.
     + Sắp xếp nhân viên theo Lương tăng dần hoặc giảm dần bằng cách nhấn RadioButton tương ứng.
     + ![Hình minh họa](./images/BS6-2.png)
+
+
+<a name="bs7"></a>
+### Bài tập bổ sung 7
+- Thiết kế form như hình bên dưới:
+![Hình minh họa](./images/BS7-1.png)
+- Yêu cầu: 
+    + Thiết kế form.
+    + Khi form load thì các thông tin về nhân viên sẽ được hiển thị trên ListView.
+    + Khi người dùng chọn 1 nhân viên trên ListView thì các thông tin về nhân viên sẽ được hiển thị trên các TextBox tương ứng (ListView chỉ hiện mỗi nhân viên được chọn).
+    + Khi người dùng nhập thông tin vào TextBox và nhấn nút Thêm thì thông tin sẽ được thêm vào ListView.
+    + Khi người dùng chọn 1 nhân viên trên ListView và nhấn nút Sửa thì thông tin sẽ được cập nhật vào ListView.
+    + Khi người dùng chọn 1 nhân viên trên ListView và nhấn nút Xóa thì thông tin sẽ được xóa khỏi ListView.
+    + Khi người dùng chọn 1 nhân viên trên ListView và nhấn nút Hủy thì thông tin của nhân viên trên các TextBox sẽ được xóa trắng (không xóa khỏi ListView).
+    + ![Hình minh họa](./images/BS7-2.png)
+

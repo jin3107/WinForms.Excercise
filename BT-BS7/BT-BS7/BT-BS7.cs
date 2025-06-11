@@ -160,5 +160,38 @@ namespace BT_BS7
             SqlCommand insertNhanVienCommand = new SqlCommand(insertNhanVienQuery, connection);
             insertNhanVienCommand.ExecuteNonQuery();
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string tenNhanVien = txtHoTen.Text;
+            int maNhanVien = LayMaNhanVien(tenNhanVien);
+            string deleteQuery = $"DELETE FROM NHANVIEN WHERE MaNhanVien = '{maNhanVien}'";
+            try
+            {
+                SqlCommand deleteCommand = new SqlCommand(deleteQuery, connection);
+                connection.Open();
+                deleteCommand.ExecuteNonQuery();
+                MessageBox.Show("Xóa nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                HienThiListView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        private int LayMaNhanVien(string tenNhanVien)
+        {
+            string query = $"SELECT MaNhanVien FROM NHANVIEN WHERE HoTenNhanVien = N'{tenNhanVien}'";
+            SqlCommand cmd = new SqlCommand(query, connection);
+            connection.Open();
+            int maNhanVien = (int)cmd.ExecuteScalar();
+            connection.Close();
+            return maNhanVien;
+        }
     }
 }
