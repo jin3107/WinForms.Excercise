@@ -8,6 +8,8 @@
 
 ### Mực lục
 
+#### Part1
+
 [Bài 2 - trang 33](#2-33)
 
 [Bài 3 - trang 33](#3-33)
@@ -263,3 +265,6 @@ Khi nhấn nút Tính, tính tổng thành tiền của các thức uống đã 
     + Khi người dùng chọn 1 nhân viên trên ListView và nhấn nút Hủy thì thông tin của nhân viên trên các TextBox sẽ được xóa trắng (không xóa khỏi ListView).
     + ![Hình minh họa](./images/BS7-2.png)
 
+
+
+#### Part2
