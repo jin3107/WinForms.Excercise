@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace QuanLySinhVien.DAO
+namespace QuanLySach.DAO
 {
     public class Database
     {
@@ -30,15 +30,6 @@ namespace QuanLySinhVien.DAO
             return dt;
         }
 
-        //public void ThucThi(string sql)
-        //{
-        //    SqlCommand cmd = new SqlCommand(sql, cn);
-        //    if (cn.State == ConnectionState.Closed)
-        //        cn.Open();
-
-        //    cmd.ExecuteNonQuery();
-        //    cn.Close();
-        //}
         public void ThucThi(SqlCommand cmd)
         {
             try
