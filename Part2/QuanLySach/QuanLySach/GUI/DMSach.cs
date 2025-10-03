@@ -366,7 +366,7 @@ namespace QuanLySach.GUI
         }
         #endregion
 
-
+        #region Chức năng của tài  liệu
         private void HienThiComboboxMaSach()
         {
             cbbMaSach_TL.Items.Clear();
@@ -472,5 +472,6 @@ namespace QuanLySach.GUI
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        #endregion
     }
 }
