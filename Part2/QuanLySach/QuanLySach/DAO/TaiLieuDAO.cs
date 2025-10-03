@@ -25,14 +25,15 @@ namespace QuanLySach.DAO
             return db.LayDL(sql);
         }
 
-        public bool Insert(string maHP, string maSach, int namTLK)
+        public bool Insert(TaiLieu taiLieu)
         {
-            string sql = @"Insert into TaiLieu(MaHP, MaSach, NamTLK) values(@MaHP, @MaSach, @NamTLK)";
+            string sql = @"Insert into TaiLieu(Id, MaHP, MaSach, NamTLK) values(@Id, @MaHP, @MaSach, @NamTLK)";
             using (SqlCommand cmd = new SqlCommand(sql, db.cn))
             {
-                cmd.Parameters.AddWithValue("@MaHP", maHP);
-                cmd.Parameters.AddWithValue("@MaSach", maSach);
-                cmd.Parameters.AddWithValue("@NamTLK", namTLK);
+                cmd.Parameters.AddWithValue("@Id", taiLieu.Id);
+                cmd.Parameters.AddWithValue("@MaHP", taiLieu.MaHP);
+                cmd.Parameters.AddWithValue("@MaSach", taiLieu.MaSach);
+                cmd.Parameters.AddWithValue("@NamTLK", taiLieu.NamTK);
 
                 try
                 {
@@ -48,18 +49,18 @@ namespace QuanLySach.DAO
             }
         }
 
-        public TaiLieu GetById(int id)
-        {
-            var dt = db.LayDL("Select Id, MaHP, MaSach, NamTLK FROM TaiLieu Where Id = " + id);
-            if (dt.Rows.Count == 0) return null;
-            var r = dt.Rows[0];
-            return new TaiLieu(
-                int.Parse(r["Id"].ToString()),
-                r["MaHP"].ToString(),
-                r["MaSach"].ToString(),
-                int.Parse(r["NamTLK"].ToString())
-            );
-        }
+        //public TaiLieu GetById(int id)
+        //{
+        //    var dt = db.LayDL("Select Id, MaHP, MaSach, NamTLK FROM TaiLieu Where Id = " + id);
+        //    if (dt.Rows.Count == 0) return null;
+        //    var r = dt.Rows[0];
+        //    return new TaiLieu(
+        //        int.Parse(r["Id"].ToString()),
+        //        r["MaHP"].ToString(),
+        //        r["MaSach"].ToString(),
+        //        int.Parse(r["NamTLK"].ToString())
+        //    );
+        //}
 
         public bool Update(TaiLieu tl)
         {
@@ -77,8 +78,8 @@ namespace QuanLySach.DAO
             string sql = @"Update TaiLieu set MaHP = @MaHP, MaSach = @MaSach, NamTLK = @NamTLK Where Id = @Id";
             using (var cmd = new SqlCommand(sql, db.cn))
             {
-                cmd.Parameters.AddWithValue("@MaHP", tl.MaHP ?? "");
-                cmd.Parameters.AddWithValue("@MaSach", tl.MaSach ?? "");
+                cmd.Parameters.AddWithValue("@MaHP", tl.MaHP);
+                cmd.Parameters.AddWithValue("@MaSach", tl.MaSach);
                 cmd.Parameters.AddWithValue("@NamTLK", tl.NamTK);
                 cmd.Parameters.AddWithValue("@Id", tl.Id);
 
@@ -109,7 +110,7 @@ namespace QuanLySach.DAO
         {
             using (var cmd = new SqlCommand($"Select 1 From {table} Where {col} = @val", db.cn))
             {
-                cmd.Parameters.AddWithValue("@val", value ?? "");
+                cmd.Parameters.AddWithValue("@val", value);
                 try
                 {
                     if (db.cn.State == ConnectionState.Closed) db.cn.Open();
@@ -127,7 +128,7 @@ namespace QuanLySach.DAO
             }
         }
 
-        public bool Delete(int id)
+        public bool Delete(string id)
         {
             string sql = "Delete From TaiLieu Where Id = @Id";
             using (SqlCommand cmd = new SqlCommand(sql, db.cn))

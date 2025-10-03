@@ -24,17 +24,22 @@ namespace QuanLySach.DAO
             return db.LayDL("Select * From HocPhan");
         }
 
-        public HocPhan GetById(string maHP)
+        public DataTable GetId()
         {
-            var dt = db.LayDL("Select MaHP, TenHP, SoTC From HocPhan WHERE MaHP = '" + maHP.Replace("'", "''") + "'");
-            if (dt.Rows.Count == 0) return null;
-            var r = dt.Rows[0];
-            return new HocPhan(
-                r["MaHP"].ToString(),
-                r["TenHP"].ToString(),
-               int.Parse(r["SoTC"].ToString())
-            );
+            return db.LayDL("Select MaHP From HocPhan");
         }
+
+        //public HocPhan GetById(string maHP)
+        //{
+        //    var dt = db.LayDL("Select MaHP, TenHP, SoTC From HocPhan WHERE MaHP = '" + maHP.Replace("'", "''") + "'");
+        //    if (dt.Rows.Count == 0) return null;
+        //    var r = dt.Rows[0];
+        //    return new HocPhan(
+        //        r["MaHP"].ToString(),
+        //        r["TenHP"].ToString(),
+        //       int.Parse(r["SoTC"].ToString())
+        //    );
+        //}
 
         public bool Insert(HocPhan hp)
         {

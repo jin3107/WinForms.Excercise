@@ -8,7 +8,7 @@ namespace QuanLySach.DTO
 {
     public class TaiLieu
     {
-        public TaiLieu(int id, string maHP, string maSach, int namTK)
+        public TaiLieu(string id, string maHP, string maSach, int namTK)
         {
             Id = id;
             MaHP = maHP;
@@ -16,7 +16,7 @@ namespace QuanLySach.DTO
             NamTK = namTK;
         }
 
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string MaHP { get; set; }
         public string MaSach { get; set; }
         public int NamTK { get; set; }

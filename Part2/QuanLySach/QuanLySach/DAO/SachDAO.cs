@@ -24,19 +24,24 @@ namespace QuanLySach.DAO
             return db.LayDL("Select * From Sach");
         }
 
-        public Sach GetById(string maSach)
+        public DataTable GetId()
         {
-            var dt = db.LayDL("SELECT MaSach, TenSach, TacGia, NhaXB, NamXB FROM Sach WHERE MaSach = '" + maSach.Replace("'", "''") + "'");
-            if (dt.Rows.Count == 0) return null;
-            var r = dt.Rows[0];
-            return new Sach(
-                r["MaSach"].ToString(),
-                r["TenSach"].ToString(),
-                r["TacGia"].ToString(),
-                r["NhaXB"].ToString(),
-                int.Parse(r["NamXB"].ToString())
-            );
+            return db.LayDL("Select MaSach From Sach");
         }
+
+        //public Sach GetById(string maSach)
+        //{
+        //    var dt = db.LayDL("SELECT MaSach, TenSach, TacGia, NhaXB, NamXB FROM Sach WHERE MaSach = '" + maSach.Replace("'", "''") + "'");
+        //    if (dt.Rows.Count == 0) return null;
+        //    var r = dt.Rows[0];
+        //    return new Sach(
+        //        r["MaSach"].ToString(),
+        //        r["TenSach"].ToString(),
+        //        r["TacGia"].ToString(),
+        //        r["NhaXB"].ToString(),
+        //        int.Parse(r["NamXB"].ToString())
+        //    );
+        //}
 
         public bool Insert(Sach sach)
         {

@@ -58,7 +58,7 @@
             this.tabPTaiLieu = new System.Windows.Forms.TabPage();
             this.lstvTaiLieu = new System.Windows.Forms.ListView();
             this.colSTT_TaiLieu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.colId_TaiLieu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.colMa_TaiLieu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.solMaSach = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colMaHP_TaiLieu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colNamTK = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -70,8 +70,6 @@
             this.btnThem_TaiLieu = new System.Windows.Forms.Button();
             this.grbTaiLieu = new System.Windows.Forms.GroupBox();
             this.txtNamTK = new System.Windows.Forms.TextBox();
-            this.txtMaHP_TaiLieu = new System.Windows.Forms.TextBox();
-            this.txtMaSach_TaiLieu = new System.Windows.Forms.TextBox();
             this.lblNamTK_TaiLieu = new System.Windows.Forms.Label();
             this.lblMaHP_TaiLieu = new System.Windows.Forms.Label();
             this.lblMaSach_TaiLieu = new System.Windows.Forms.Label();
@@ -96,6 +94,10 @@
             this.lblTenHP = new System.Windows.Forms.Label();
             this.lblMaHP = new System.Windows.Forms.Label();
             this.lblQLHocPhan = new System.Windows.Forms.Label();
+            this.cbbMaSach_TL = new System.Windows.Forms.ComboBox();
+            this.cbbMaHP_TL = new System.Windows.Forms.ComboBox();
+            this.lblMaTL = new System.Windows.Forms.Label();
+            this.txtMaTL = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tabPSach.SuspendLayout();
             this.grbChucNang.SuspendLayout();
@@ -205,6 +207,7 @@
             this.btnHuy_Sach.TabIndex = 4;
             this.btnHuy_Sach.Text = "Huỷ";
             this.btnHuy_Sach.UseVisualStyleBackColor = true;
+            this.btnHuy_Sach.Click += new System.EventHandler(this.btnHuy_Sach_Click);
             // 
             // btnCapNhat_Sach
             // 
@@ -214,6 +217,7 @@
             this.btnCapNhat_Sach.TabIndex = 3;
             this.btnCapNhat_Sach.Text = "Cập nhật";
             this.btnCapNhat_Sach.UseVisualStyleBackColor = true;
+            this.btnCapNhat_Sach.Click += new System.EventHandler(this.btnCapNhat_Sach_Click);
             // 
             // btnKhong_Sach
             // 
@@ -223,6 +227,7 @@
             this.btnKhong_Sach.TabIndex = 2;
             this.btnKhong_Sach.Text = "Không";
             this.btnKhong_Sach.UseVisualStyleBackColor = true;
+            this.btnKhong_Sach.Click += new System.EventHandler(this.btnKhong_Sach_Click);
             // 
             // btnGhi_Sach
             // 
@@ -232,6 +237,7 @@
             this.btnGhi_Sach.TabIndex = 1;
             this.btnGhi_Sach.Text = "Ghi";
             this.btnGhi_Sach.UseVisualStyleBackColor = true;
+            this.btnGhi_Sach.Click += new System.EventHandler(this.btnGhi_Sach_Click);
             // 
             // btnThem_Sach
             // 
@@ -241,6 +247,7 @@
             this.btnThem_Sach.TabIndex = 0;
             this.btnThem_Sach.Text = "Thêm";
             this.btnThem_Sach.UseVisualStyleBackColor = true;
+            this.btnThem_Sach.Click += new System.EventHandler(this.btnThem_Sach_Click);
             // 
             // grbSach
             // 
@@ -370,7 +377,7 @@
             // 
             this.lstvTaiLieu.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.colSTT_TaiLieu,
-            this.colId_TaiLieu,
+            this.colMa_TaiLieu,
             this.solMaSach,
             this.colMaHP_TaiLieu,
             this.colNamTK});
@@ -390,9 +397,10 @@
             this.colSTT_TaiLieu.Text = "STT";
             this.colSTT_TaiLieu.Width = 50;
             // 
-            // colId_TaiLieu
+            // colMa_TaiLieu
             // 
-            this.colId_TaiLieu.Text = "Id";
+            this.colMa_TaiLieu.Text = "Mã tài liệu";
+            this.colMa_TaiLieu.Width = 120;
             // 
             // solMaSach
             // 
@@ -430,6 +438,7 @@
             this.btnHuy_TaiLieu.TabIndex = 4;
             this.btnHuy_TaiLieu.Text = "Huỷ";
             this.btnHuy_TaiLieu.UseVisualStyleBackColor = true;
+            this.btnHuy_TaiLieu.Click += new System.EventHandler(this.btnHuy_TaiLieu_Click);
             // 
             // btnCapNhat_TaiLieu
             // 
@@ -439,6 +448,7 @@
             this.btnCapNhat_TaiLieu.TabIndex = 3;
             this.btnCapNhat_TaiLieu.Text = "Cập nhật";
             this.btnCapNhat_TaiLieu.UseVisualStyleBackColor = true;
+            this.btnCapNhat_TaiLieu.Click += new System.EventHandler(this.btnCapNhat_TaiLieu_Click);
             // 
             // btnKhong_TaiLieu
             // 
@@ -448,6 +458,7 @@
             this.btnKhong_TaiLieu.TabIndex = 2;
             this.btnKhong_TaiLieu.Text = "Không";
             this.btnKhong_TaiLieu.UseVisualStyleBackColor = true;
+            this.btnKhong_TaiLieu.Click += new System.EventHandler(this.btnKhong_TaiLieu_Click);
             // 
             // btnGhi_TaiLieu
             // 
@@ -457,6 +468,7 @@
             this.btnGhi_TaiLieu.TabIndex = 1;
             this.btnGhi_TaiLieu.Text = "Ghi";
             this.btnGhi_TaiLieu.UseVisualStyleBackColor = true;
+            this.btnGhi_TaiLieu.Click += new System.EventHandler(this.btnGhi_TaiLieu_Click);
             // 
             // btnThem_TaiLieu
             // 
@@ -466,12 +478,15 @@
             this.btnThem_TaiLieu.TabIndex = 0;
             this.btnThem_TaiLieu.Text = "Thêm";
             this.btnThem_TaiLieu.UseVisualStyleBackColor = true;
+            this.btnThem_TaiLieu.Click += new System.EventHandler(this.btnThem_TaiLieu_Click);
             // 
             // grbTaiLieu
             // 
+            this.grbTaiLieu.Controls.Add(this.txtMaTL);
+            this.grbTaiLieu.Controls.Add(this.lblMaTL);
+            this.grbTaiLieu.Controls.Add(this.cbbMaHP_TL);
+            this.grbTaiLieu.Controls.Add(this.cbbMaSach_TL);
             this.grbTaiLieu.Controls.Add(this.txtNamTK);
-            this.grbTaiLieu.Controls.Add(this.txtMaHP_TaiLieu);
-            this.grbTaiLieu.Controls.Add(this.txtMaSach_TaiLieu);
             this.grbTaiLieu.Controls.Add(this.lblNamTK_TaiLieu);
             this.grbTaiLieu.Controls.Add(this.lblMaHP_TaiLieu);
             this.grbTaiLieu.Controls.Add(this.lblMaSach_TaiLieu);
@@ -484,29 +499,15 @@
             // 
             // txtNamTK
             // 
-            this.txtNamTK.Location = new System.Drawing.Point(563, 30);
+            this.txtNamTK.Location = new System.Drawing.Point(180, 72);
             this.txtNamTK.Name = "txtNamTK";
             this.txtNamTK.Size = new System.Drawing.Size(93, 28);
             this.txtNamTK.TabIndex = 10;
             // 
-            // txtMaHP_TaiLieu
-            // 
-            this.txtMaHP_TaiLieu.Location = new System.Drawing.Point(134, 73);
-            this.txtMaHP_TaiLieu.Name = "txtMaHP_TaiLieu";
-            this.txtMaHP_TaiLieu.Size = new System.Drawing.Size(205, 28);
-            this.txtMaHP_TaiLieu.TabIndex = 7;
-            // 
-            // txtMaSach_TaiLieu
-            // 
-            this.txtMaSach_TaiLieu.Location = new System.Drawing.Point(134, 30);
-            this.txtMaSach_TaiLieu.Name = "txtMaSach_TaiLieu";
-            this.txtMaSach_TaiLieu.Size = new System.Drawing.Size(205, 28);
-            this.txtMaSach_TaiLieu.TabIndex = 6;
-            // 
             // lblNamTK_TaiLieu
             // 
             this.lblNamTK_TaiLieu.AutoSize = true;
-            this.lblNamTK_TaiLieu.Location = new System.Drawing.Point(403, 33);
+            this.lblNamTK_TaiLieu.Location = new System.Drawing.Point(20, 75);
             this.lblNamTK_TaiLieu.Name = "lblNamTK_TaiLieu";
             this.lblNamTK_TaiLieu.Size = new System.Drawing.Size(135, 22);
             this.lblNamTK_TaiLieu.TabIndex = 5;
@@ -515,7 +516,7 @@
             // lblMaHP_TaiLieu
             // 
             this.lblMaHP_TaiLieu.AutoSize = true;
-            this.lblMaHP_TaiLieu.Location = new System.Drawing.Point(6, 79);
+            this.lblMaHP_TaiLieu.Location = new System.Drawing.Point(473, 75);
             this.lblMaHP_TaiLieu.Name = "lblMaHP_TaiLieu";
             this.lblMaHP_TaiLieu.Size = new System.Drawing.Size(113, 22);
             this.lblMaHP_TaiLieu.TabIndex = 2;
@@ -524,7 +525,7 @@
             // lblMaSach_TaiLieu
             // 
             this.lblMaSach_TaiLieu.AutoSize = true;
-            this.lblMaSach_TaiLieu.Location = new System.Drawing.Point(6, 36);
+            this.lblMaSach_TaiLieu.Location = new System.Drawing.Point(473, 24);
             this.lblMaSach_TaiLieu.Name = "lblMaSach_TaiLieu";
             this.lblMaSach_TaiLieu.Size = new System.Drawing.Size(77, 22);
             this.lblMaSach_TaiLieu.TabIndex = 1;
@@ -586,7 +587,7 @@
             // colTenHP
             // 
             this.colTenHP.Text = "Tên học phần";
-            this.colTenHP.Width = 200;
+            this.colTenHP.Width = 400;
             // 
             // colSoTC
             // 
@@ -614,6 +615,7 @@
             this.btnHuy_HP.TabIndex = 4;
             this.btnHuy_HP.Text = "Huỷ";
             this.btnHuy_HP.UseVisualStyleBackColor = true;
+            this.btnHuy_HP.Click += new System.EventHandler(this.btnHuy_HP_Click);
             // 
             // btnCapNhat_HP
             // 
@@ -623,6 +625,7 @@
             this.btnCapNhat_HP.TabIndex = 3;
             this.btnCapNhat_HP.Text = "Cập nhật";
             this.btnCapNhat_HP.UseVisualStyleBackColor = true;
+            this.btnCapNhat_HP.Click += new System.EventHandler(this.btnCapNhat_HP_Click);
             // 
             // btnKhong_HP
             // 
@@ -632,6 +635,7 @@
             this.btnKhong_HP.TabIndex = 2;
             this.btnKhong_HP.Text = "Không";
             this.btnKhong_HP.UseVisualStyleBackColor = true;
+            this.btnKhong_HP.Click += new System.EventHandler(this.btnKhong_HP_Click);
             // 
             // btnGhi_HP
             // 
@@ -641,6 +645,7 @@
             this.btnGhi_HP.TabIndex = 1;
             this.btnGhi_HP.Text = "Ghi";
             this.btnGhi_HP.UseVisualStyleBackColor = true;
+            this.btnGhi_HP.Click += new System.EventHandler(this.btnGhi_HP_Click);
             // 
             // btnThem_HP
             // 
@@ -650,6 +655,7 @@
             this.btnThem_HP.TabIndex = 0;
             this.btnThem_HP.Text = "Thêm";
             this.btnThem_HP.UseVisualStyleBackColor = true;
+            this.btnThem_HP.Click += new System.EventHandler(this.btnThem_HP_Click);
             // 
             // grbHocPhan
             // 
@@ -724,6 +730,38 @@
             this.lblQLHocPhan.Size = new System.Drawing.Size(218, 29);
             this.lblQLHocPhan.TabIndex = 1;
             this.lblQLHocPhan.Text = "Quản lý Học phần";
+            // 
+            // cbbMaSach_TL
+            // 
+            this.cbbMaSach_TL.FormattingEnabled = true;
+            this.cbbMaSach_TL.Location = new System.Drawing.Point(601, 21);
+            this.cbbMaSach_TL.Name = "cbbMaSach_TL";
+            this.cbbMaSach_TL.Size = new System.Drawing.Size(205, 30);
+            this.cbbMaSach_TL.TabIndex = 11;
+            // 
+            // cbbMaHP_TL
+            // 
+            this.cbbMaHP_TL.FormattingEnabled = true;
+            this.cbbMaHP_TL.Location = new System.Drawing.Point(601, 67);
+            this.cbbMaHP_TL.Name = "cbbMaHP_TL";
+            this.cbbMaHP_TL.Size = new System.Drawing.Size(205, 30);
+            this.cbbMaHP_TL.TabIndex = 12;
+            // 
+            // lblMaTL
+            // 
+            this.lblMaTL.AutoSize = true;
+            this.lblMaTL.Location = new System.Drawing.Point(20, 29);
+            this.lblMaTL.Name = "lblMaTL";
+            this.lblMaTL.Size = new System.Drawing.Size(91, 22);
+            this.lblMaTL.TabIndex = 13;
+            this.lblMaTL.Text = "Mã tài liệu";
+            // 
+            // txtMaTL
+            // 
+            this.txtMaTL.Location = new System.Drawing.Point(180, 26);
+            this.txtMaTL.Name = "txtMaTL";
+            this.txtMaTL.Size = new System.Drawing.Size(159, 28);
+            this.txtMaTL.TabIndex = 14;
             // 
             // DMSach
             // 
@@ -803,8 +841,6 @@
         private System.Windows.Forms.Button btnThem_TaiLieu;
         private System.Windows.Forms.GroupBox grbTaiLieu;
         private System.Windows.Forms.TextBox txtNamTK;
-        private System.Windows.Forms.TextBox txtMaHP_TaiLieu;
-        private System.Windows.Forms.TextBox txtMaSach_TaiLieu;
         private System.Windows.Forms.Label lblNamTK_TaiLieu;
         private System.Windows.Forms.Label lblMaHP_TaiLieu;
         private System.Windows.Forms.Label lblMaSach_TaiLieu;
@@ -826,6 +862,10 @@
         private System.Windows.Forms.Label lblSoTC;
         private System.Windows.Forms.Label lblTenHP;
         private System.Windows.Forms.Label lblMaHP;
-        private System.Windows.Forms.ColumnHeader colId_TaiLieu;
+        private System.Windows.Forms.ColumnHeader colMa_TaiLieu;
+        private System.Windows.Forms.ComboBox cbbMaHP_TL;
+        private System.Windows.Forms.ComboBox cbbMaSach_TL;
+        private System.Windows.Forms.TextBox txtMaTL;
+        private System.Windows.Forms.Label lblMaTL;
     }
 }
