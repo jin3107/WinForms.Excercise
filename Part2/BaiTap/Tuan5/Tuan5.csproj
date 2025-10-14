@@ -53,10 +53,20 @@
     <Compile Include="Bai1a\GUI\Bai1a.Designer.cs">
       <DependentUpon>Bai1a.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bai1b1\DAO\Database.cs" />
+    <Compile Include="Bai1b1\GUI\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bai1b1\GUI\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bai1a\GUI\Bai1a.resx">
       <DependentUpon>Bai1a.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bai1b1\GUI\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -82,9 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Bai1a\DTO\" />
-    <Folder Include="Bai1b.1\DAO\" />
-    <Folder Include="Bai1b.1\DTO\" />
-    <Folder Include="Bai1b.1\GUI\" />
+    <Folder Include="Bai1b1\DTO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

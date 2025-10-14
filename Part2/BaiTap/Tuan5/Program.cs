@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Tuan5.Bai1a.GUI;
+using Tuan5.Bai1b1.GUI;
 
 namespace Tuan5
 {
@@ -17,7 +18,7 @@ namespace Tuan5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Bai1b1.GUI.Form1());
         }
     }
 }
