@@ -2,7 +2,7 @@
 >
 > Cập nhật lần cuối: **11/06/2025**
 >
-> Lưu ý: Đây là tài liệu hướng dẫn thực hiện các bài tập Winform bằng ngôn ngữ C# được soạn trong cuốn sách giáo trình môn học. README này được viết để hỗ trợ người học trong việc thực hành và áp dụng kiến thức đã học về Winform (Cập nhật README.md chưa đủ nhưng bài tập thì đủ).
+> Lưu ý: Đây là tài liệu hướng dẫn thực hiện các bài tập Winform bằng ngôn ngữ C# được soạn trong cuốn sách giáo trình môn học. README này được viết để hỗ trợ người học trong việc thực hành và áp dụng kiến thức đã học về Winform.
 
 # Bài tập Winform bằng ngôn ngữ C#
 
