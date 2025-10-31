@@ -55,9 +55,13 @@ namespace QuanLyKhoaSV.DAO
         {
             Object result;
             SqlCommand cmd = new SqlCommand(sql, connection);
-            connection.Open();
+            if (connection.State == ConnectionState.Closed)
+                connection.Open();
+
             result = cmd.ExecuteScalar();
-            connection.Close();
+            if (connection.State == ConnectionState.Open)
+                connection.Close();
+
             return result.ToString();
         }
     }

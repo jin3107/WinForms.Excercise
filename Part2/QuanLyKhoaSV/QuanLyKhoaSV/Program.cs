@@ -1,4 +1,6 @@
-﻿using System;
+﻿using OfficeOpenXml;
+using QuanLyKhoaSV.GUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,9 +16,11 @@ namespace QuanLyKhoaSV
         [STAThread]
         static void Main()
         {
+            ExcelPackage.License.SetNonCommercialPersonal("Huỳnh Tấn Chương");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new QuanLyKhoaSVForm());
         }
     }
 }
