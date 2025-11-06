@@ -1,4 +1,5 @@
 ﻿using OfficeOpenXml;
+using OfficeOpenXml.Style;
 using QuanLyKhoaSV.DAO;
 using QuanLyKhoaSV.DTO;
 using System;
@@ -359,6 +360,91 @@ namespace QuanLyKhoaSV.GUI
             MessageBox.Show(result.ToString(), "Kết quả Import", MessageBoxButtons.OK,
                 errorCount > 0 ? MessageBoxIcon.Warning : MessageBoxIcon.Information);
             LoadTreeView();
+        }
+
+        private void btnXuatFileExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveDialog = new SaveFileDialog();
+            saveDialog.Filter = "Excel Workbook (*.xlsx)|*.xlsx";
+            saveDialog.Title = "Lưu tệp Excel";
+            saveDialog.FileName = "BaoCaoDuLieu.xlsx"; // Tên mặc định
+
+            if (saveDialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    // Gọi phương thức xuất dữ liệu
+                    ExportDataGridViewToExcel(dgvDMSV, saveDialog.FileName);
+                    MessageBox.Show("Xuất dữ liệu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Đã xảy ra lỗi khi xuất Excel: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void ExportDataGridViewToExcel(DataGridView dgvDMSV, string fileName)
+        {
+            // Đảm bảo tệp được lưu an toàn
+            FileInfo fileInfo = new FileInfo(fileName);
+            // Sử dụng khối 'using' cho ExcelPackage
+            using (ExcelPackage package = new ExcelPackage(fileInfo))
+            {
+                // Tạo một worksheet mới (có thể đặt tên là "Data")
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.Add("Data");
+                // --- BƯỚC 1: Xuất Tiêu đề Cột ---
+                int colIndex = 1;
+                foreach (DataGridViewColumn col in dgvDMSV.Columns)
+                {
+                    // Chỉ xuất những cột nhìn thấy (Visible)
+                    if (col.Visible)
+                    {
+                        worksheet.Cells[1, colIndex].Value = col.HeaderText;
+                        colIndex++;
+                    }
+                }
+                // Định dạng tiêu đề (Tùy chọn)
+                using (var range = worksheet.Cells[1, 1, 1, colIndex - 1])
+                {
+                    range.Style.Font.Bold = true;
+                    range.Style.Fill.PatternType = ExcelFillStyle.Solid;
+                    range.Style.Fill.BackgroundColor.SetColor(System.Drawing.Color.LightGray);
+                }
+
+                // --- BƯỚC 2: Xuất Dữ liệu Hàng ---
+                int rowIndex = 2; // Bắt đầu từ hàng thứ 2 vì hàng 1 là tiêu đề
+                // Lặp qua từng hàng (Rows) của DataGridView
+                foreach (DataGridViewRow row in dgvDMSV.Rows)
+                {
+                    // Bỏ qua hàng trống (thường là hàng mới ở cuối DataGridView)
+                    if (row.IsNewRow) continue;
+
+                    colIndex = 1; // Đặt lại chỉ số cột cho mỗi hàng
+                                  // Lặp qua từng ô (Cells) của hàng hiện tại
+                    foreach (DataGridViewCell cell in row.Cells)
+                    {
+                        // Kiểm tra xem cột có hiển thị không
+                        if (dgvDMSV.Columns[cell.ColumnIndex].Visible)
+                        {
+                            // Lấy giá trị của ô và gán vào ô Excel tương ứng
+                            worksheet.Cells[rowIndex, colIndex].Value = cell.Value;
+                            colIndex++;
+                        }
+                    }
+                    rowIndex++;
+                }
+                // --- BƯỚC 3: Tự động điều chỉnh độ rộng cột và Lưu tệp ---
+                worksheet.Cells[worksheet.Dimension.Address].AutoFitColumns();
+                // Lưu tệp Excel
+                package.Save();
+            }
+        }
+        public string CleanStringForExcel(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+                return input;
+            return System.Text.RegularExpressions.Regex.Replace(input, @"[\x00-\x08\x0b\x0c\x0e-\x1f]", string.Empty);
         }
     }
 }

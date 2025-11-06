@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuanLyKhoaSVForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.tvwPhongBan = new System.Windows.Forms.TreeView();
+            this.imgList = new System.Windows.Forms.ImageList(this.components);
             this.btnNhapFileExcel = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -54,7 +55,7 @@
             this.dgvDMSV = new System.Windows.Forms.DataGridView();
             this.lblTongNu = new System.Windows.Forms.Label();
             this.lblTongNam = new System.Windows.Forms.Label();
-            this.imgList = new System.Windows.Forms.ImageList(this.components);
+            this.btnXuatFileExcel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDMSV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -79,9 +80,19 @@
             this.tvwPhongBan.TabIndex = 1;
             this.tvwPhongBan.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwPhongBan_AfterSelect);
             // 
+            // imgList
+            // 
+            this.imgList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgList.ImageStream")));
+            this.imgList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imgList.Images.SetKeyName(0, "department.png");
+            this.imgList.Images.SetKeyName(1, "student.png");
+            this.imgList.Images.SetKeyName(2, "add.png");
+            this.imgList.Images.SetKeyName(3, "update.png");
+            this.imgList.Images.SetKeyName(4, "delete.png");
+            // 
             // btnNhapFileExcel
             // 
-            this.btnNhapFileExcel.Location = new System.Drawing.Point(777, 262);
+            this.btnNhapFileExcel.Location = new System.Drawing.Point(633, 262);
             this.btnNhapFileExcel.Name = "btnNhapFileExcel";
             this.btnNhapFileExcel.Size = new System.Drawing.Size(163, 38);
             this.btnNhapFileExcel.TabIndex = 43;
@@ -283,21 +294,22 @@
             this.lblTongNam.TabIndex = 44;
             this.lblTongNam.Text = "Tổng sinh viên nam: ";
             // 
-            // imgList
+            // btnXuatFileExcel
             // 
-            this.imgList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imgList.ImageStream")));
-            this.imgList.TransparentColor = System.Drawing.Color.Transparent;
-            this.imgList.Images.SetKeyName(0, "department.png");
-            this.imgList.Images.SetKeyName(1, "student.png");
-            this.imgList.Images.SetKeyName(2, "add.png");
-            this.imgList.Images.SetKeyName(3, "update.png");
-            this.imgList.Images.SetKeyName(4, "delete.png");
+            this.btnXuatFileExcel.Location = new System.Drawing.Point(802, 262);
+            this.btnXuatFileExcel.Name = "btnXuatFileExcel";
+            this.btnXuatFileExcel.Size = new System.Drawing.Size(138, 38);
+            this.btnXuatFileExcel.TabIndex = 47;
+            this.btnXuatFileExcel.Text = "Xuất file Excel";
+            this.btnXuatFileExcel.UseVisualStyleBackColor = true;
+            this.btnXuatFileExcel.Click += new System.EventHandler(this.btnXuatFileExcel_Click);
             // 
             // QuanLyKhoaSVForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 566);
+            this.Controls.Add(this.btnXuatFileExcel);
             this.Controls.Add(this.dgvDMSV);
             this.Controls.Add(this.lblTongNu);
             this.Controls.Add(this.lblTongNam);
@@ -323,7 +335,7 @@
             this.Controls.Add(this.tvwPhongBan);
             this.Controls.Add(this.lblTitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "QuanLyKhoaSVForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QuanLyKhoaSVForm";
@@ -361,5 +373,6 @@
         private System.Windows.Forms.Label lblTongNu;
         private System.Windows.Forms.Label lblTongNam;
         private System.Windows.Forms.ImageList imgList;
+        private System.Windows.Forms.Button btnXuatFileExcel;
     }
 }

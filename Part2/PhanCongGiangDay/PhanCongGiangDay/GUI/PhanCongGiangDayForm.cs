@@ -73,8 +73,8 @@ namespace PhanCongGiangDay.GUI
 
                 DataTable dthp = db.ExcuteQuery(
                     "SELECT MaLop, pc.MaHP, TenHP, SoTiet " +
-                    "FROM HOCPHAN hp JOIN PHANCONG pc ON hp.MaHP = pc.MaHP " +
-                    $"WHERE pc.MaGV = '{maGV}'");
+                    "FROM HOCPHAN hp, PHANCONG pc " +
+                    $"WHERE hp.MaHP = pc.MaHP and pc.MaGV = '{maGV}'");
                 dtgHocPhan.DataSource = dthp;
 
                 string daDay = db.FindBy($"SELECT COUNT(*) FROM PHANCONG WHERE MaGV = '{maGV}'");
