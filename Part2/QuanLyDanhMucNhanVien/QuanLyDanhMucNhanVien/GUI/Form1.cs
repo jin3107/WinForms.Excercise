@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -173,7 +174,7 @@ namespace QuanLyDanhMucNhanVien
                     "Bac = @Bac, NgayTuyen = @NgayTuyen, GioiTinh = @GioiTinh, MaPhong = @MaPhong " +
                     "Where MaNV = @MaNV";
 
-                System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(sql, db.connection);
+                SqlCommand cmd = new SqlCommand(sql, db.connection);
                 cmd.Parameters.AddWithValue("@MaNV", txtMaNV.Text);
                 cmd.Parameters.AddWithValue("@TenNV", txtHoTen.Text);
                 cmd.Parameters.AddWithValue("@TenCV", txtTenCV.Text);
@@ -282,18 +283,14 @@ namespace QuanLyDanhMucNhanVien
         private void TimHeSoLuong()
         {
             if (!string.IsNullOrEmpty(cbbNgach.Text) && !string.IsNullOrEmpty(cbbBac.Text))
-            {
-                // Kiểm tra xem TenCongViec có phải là Giảng viên không
+            
                 if (string.IsNullOrEmpty(txtTenCV.Text) || !txtTenCV.Text.ToLower().Contains("giảng viên"))
                 {
                     txtHeSoLuong.Text = "";
-                    //MessageBox.Show("Chức năng này chỉ áp dụng cho Giảng viên!", "Thông báo",
-                    //    MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
                 }
 
-                // Tìm hệ số lương từ bảng BacNgach dựa trên Ngạch và Bậc
-                string sql = $"Select HeSoLuong From BacNgach Where Ngach = N'{cbbNgach.Text}' And Bac = '{cbbBac.Text}'";
+                string sql = $"Select HeSoLuong From BacNgach Where Ngach = N'{cbbNgach.Text}' and Bac = '{cbbBac.Text}'";
                 string heSoLuong = db.FindBy(sql);
 
                 if (!string.IsNullOrEmpty(heSoLuong))
