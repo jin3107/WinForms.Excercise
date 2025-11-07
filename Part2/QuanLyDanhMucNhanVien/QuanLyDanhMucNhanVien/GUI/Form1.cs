@@ -100,7 +100,8 @@ namespace QuanLyDanhMucNhanVien
                     string truongPhong = db.FindBy("Select TenNV From NhanVien nv, PhongBan pb " +
                         $"Where pb.MaPhong = nv.MaPhong and pb.MaPhong = '{maPhong}' and nv.MaQL is null");
                     txtTruongPhong.Text = truongPhong;
-                } catch
+                }
+                catch
                 {
                     txtTruongPhong.Text = "";
                 }
@@ -246,7 +247,7 @@ namespace QuanLyDanhMucNhanVien
                 string sql = "Insert Into NhanVien(MaNV, TenNV, TenCongViec, Ngach, Bac, NgayTuyen, GioiTinh, MaPhong) " +
                     "Values(@MaNV, @TenNV, @TenCV, @Ngach, @Bac, @NgayTuyen, @GioiTinh, @MaPhong)";
 
-                System.Data.SqlClient.SqlCommand cmd = new System.Data.SqlClient.SqlCommand(sql, db.connection);
+                SqlCommand cmd = new SqlCommand(sql, db.connection);
                 cmd.Parameters.AddWithValue("@MaNV", txtMaNV.Text);
                 cmd.Parameters.AddWithValue("@TenNV", txtHoTen.Text);
                 cmd.Parameters.AddWithValue("@TenCV", txtTenCV.Text);
@@ -283,26 +284,25 @@ namespace QuanLyDanhMucNhanVien
         private void TimHeSoLuong()
         {
             if (!string.IsNullOrEmpty(cbbNgach.Text) && !string.IsNullOrEmpty(cbbBac.Text))
-            
+
                 if (string.IsNullOrEmpty(txtTenCV.Text) || !txtTenCV.Text.ToLower().Contains("giảng viên"))
                 {
                     txtHeSoLuong.Text = "";
                     return;
                 }
 
-                string sql = $"Select HeSoLuong From BacNgach Where Ngach = N'{cbbNgach.Text}' and Bac = '{cbbBac.Text}'";
-                string heSoLuong = db.FindBy(sql);
+            string sql = $"Select HeSoLuong From BacNgach Where Ngach = N'{cbbNgach.Text}' and Bac = '{cbbBac.Text}'";
+            string heSoLuong = db.FindBy(sql);
 
-                if (!string.IsNullOrEmpty(heSoLuong))
-                {
-                    txtHeSoLuong.Text = heSoLuong;
-                }
-                else
-                {
-                    txtHeSoLuong.Text = "";
-                    MessageBox.Show("Không tìm thấy hệ số lương cho ngạch và bậc này!", "Thông báo",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+            if (!string.IsNullOrEmpty(heSoLuong))
+            {
+                txtHeSoLuong.Text = heSoLuong;
+            }
+            else
+            {
+                txtHeSoLuong.Text = "";
+                MessageBox.Show("Không tìm thấy hệ số lương cho ngạch và bậc này!", "Thông báo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
