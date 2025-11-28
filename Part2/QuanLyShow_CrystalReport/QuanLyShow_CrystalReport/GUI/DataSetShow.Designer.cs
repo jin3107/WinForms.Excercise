@@ -287,8 +287,6 @@ namespace QuanLyShow_CrystalReport.GUI {
             
             private global::System.Data.DataColumn columnNghedanh;
             
-            private global::System.Data.DataColumn columnGiave;
-            
             private global::System.Data.DataColumn columnMaCS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -358,14 +356,6 @@ namespace QuanLyShow_CrystalReport.GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn GiaveColumn {
-                get {
-                    return this.columnGiave;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn MaCSColumn {
                 get {
                     return this.columnMaCS;
@@ -409,14 +399,13 @@ namespace QuanLyShow_CrystalReport.GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DataTable1Row AddDataTable1Row(string Tendiadiem, string Diachi, System.DateTime Ngaybd, string Nghedanh, int Giave, string MaCS) {
+            public DataTable1Row AddDataTable1Row(string Tendiadiem, string Diachi, System.DateTime Ngaybd, string Nghedanh, string MaCS) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Tendiadiem,
                         Diachi,
                         Ngaybd,
                         Nghedanh,
-                        Giave,
                         MaCS};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
@@ -444,7 +433,6 @@ namespace QuanLyShow_CrystalReport.GUI {
                 this.columnDiachi = base.Columns["Diachi"];
                 this.columnNgaybd = base.Columns["Ngaybd"];
                 this.columnNghedanh = base.Columns["Nghedanh"];
-                this.columnGiave = base.Columns["Giave"];
                 this.columnMaCS = base.Columns["MaCS"];
             }
             
@@ -459,8 +447,6 @@ namespace QuanLyShow_CrystalReport.GUI {
                 base.Columns.Add(this.columnNgaybd);
                 this.columnNghedanh = new global::System.Data.DataColumn("Nghedanh", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNghedanh);
-                this.columnGiave = new global::System.Data.DataColumn("Giave", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnGiave);
                 this.columnMaCS = new global::System.Data.DataColumn("MaCS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaCS);
             }
@@ -669,22 +655,6 @@ namespace QuanLyShow_CrystalReport.GUI {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int Giave {
-                get {
-                    try {
-                        return ((int)(this[this.tableDataTable1.GiaveColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Giave\' in table \'DataTable1\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.GiaveColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string MaCS {
                 get {
                     try {
@@ -745,18 +715,6 @@ namespace QuanLyShow_CrystalReport.GUI {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetNghedanhNull() {
                 this[this.tableDataTable1.NghedanhColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsGiaveNull() {
-                return this.IsNull(this.tableDataTable1.GiaveColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetGiaveNull() {
-                this[this.tableDataTable1.GiaveColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
