@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,17 +33,18 @@ namespace QuanLyShow_CrystalReport.GUI
         private void LoadTreeView()
         {
             tvwDiaChiSanKhau.Nodes.Clear();
-            DataTable dtTreeViewShowCSC = db.ExcuteQuery("select madd, tendiadiem from sankhau");
             DataTable dtCaSiChinh = db.ExcuteQuery("select MaCS, nghedanh from CASI");
             cbbCaSiChinh.DataSource = dtCaSiChinh;
             cbbCaSiChinh.DisplayMember = "nghedanh";
             cbbCaSiChinh.ValueMember = "macs";
 
-            DataTable dtCaSiDH = db.ExcuteQuery("select MaCS, nghedanh from CASI");
-            cbbCaSiDongHanh.DataSource = dtCaSiDH;
+            //DataTable dtCaSiDH = db.ExcuteQuery("select MaCS, nghedanh from CASI");
+            //cbbCaSiDongHanh.DataSource = dtCaSiDH;
+            cbbCaSiDongHanh.DataSource = dtCaSiChinh;
             cbbCaSiDongHanh.DisplayMember = "nghedanh";
             cbbCaSiDongHanh.ValueMember = "macs";
 
+            DataTable dtTreeViewShowCSC = db.ExcuteQuery("select madd, tendiadiem from sankhau");
             for (int i = 0; i < dtTreeViewShowCSC.Rows.Count; i++)
             {
                 TreeNode n = new TreeNode();
@@ -81,10 +83,11 @@ namespace QuanLyShow_CrystalReport.GUI
             if (n.Parent == null)
             {
                 string madd = n.Tag.ToString();
-                DataTable dtcs = db.ExcuteQuery("select format(ngaybd, 'dd/MM/yyyy') as Ngaybdien, MaCS, Nghedanh " +
-                    "from show s, casi c " +
-                    $"where s.Casichinh = c.MaCS and madd like '%{madd}%'");
-                dgvShow.DataSource = dtcs;
+                DataTable dt = db.ExcuteQuery(
+                    "SELECT MaCS, cs.Nghedanh, sh.Ngaybd " +
+                    "FROM SHOW sh, CASI cs " +
+                    $"WHERE(cs.MaCS = sh.Casichinh OR cs.MaCS = sh.CSdonghanh)  AND sh.MaDD = '{madd}'");
+                dgvShow.DataSource = dt;
 
                 DataTable dtDiaDiem = db.ExcuteQuery($"select TenDiaDiem from sankhau where madd like '%{madd}%'");
                 string diadiem = string.Empty;
@@ -93,20 +96,27 @@ namespace QuanLyShow_CrystalReport.GUI
                     diadiem = dtDiaDiem.Rows[0][0].ToString();
                 }
                 lblDSShow.Text = "Danh sách các show tại " + diadiem;
+
+                string sqlDem = $@"select count(DISTINCT Sh.Casichinh) as TongSoCaSi
+                    from CASI C, SHOW Sh
+                    where(C.MaCS = Sh.Casichinh or C.MaCS = Sh.CSdonghanh) and Sh.MaDD like '%{madd}%'";
+                lblTongsoCS.Text = "Tổng số ca sĩ biểu diễn: " + db.FindBy(sqlDem);
             }
             else
             {
                 string mashowcasichinh = tvwDiaChiSanKhau.SelectedNode.Tag.ToString();
-                string sql = "select " +
-                    "sh.Mashow, casichinh.Nghedanh as Casichinh, casidonghanh.Nghedanh as CSdonghanh, " +
-                    "format(sh.Ngaybd, 'dd/MM/yyyy') as Ngaybd, " +
-                    "convert(varchar(8), sh.Giobd, 108) as Giobd " +
-                    "from show sh, casi casichinh, casi casidonghanh " +
-                    $"where sh.Casichinh = casichinh.MaCS and sh.CSdonghanh = casidonghanh.MaCS and sh.Casichinh IN (select Casichinh from show where Mashow like '%{mashowcasichinh}%')" +
-                    $"and sh.Ngaybd IN (select Ngaybd from show where Mashow like '%{mashowcasichinh}%')";
-                DataTable dtDongBo = db.ExcuteQuery(sql);
-                if (dtDongBo.Rows.Count > 0) 
-                    HienThiDongBo(dtDongBo.Rows[0]);
+                string sql = $@"
+                    select sh.Mashow, c1.Nghedanh as Casichinh,
+                        ISNULL((select Nghedanh from casi where MaCS = sh.CSdonghanh), '') as CSdonghanh,
+                        sh.Ngaybd, sh.Giobd
+                    from show sh, casi c1
+                    where sh.Casichinh = c1.MaCS 
+                        and sh.Mashow = '{mashowcasichinh}'";
+
+                DataTable dt = db.ExcuteQuery(sql);
+                if (dt.Rows.Count > 0)
+                    HienThiDongBo(dt.Rows[0]);
+
             }
         }
 
@@ -198,7 +208,7 @@ namespace QuanLyShow_CrystalReport.GUI
             else
                 cmd.Parameters.AddWithValue("@casidonghanh", DBNull.Value);
             
-            cmd.Parameters.AddWithValue("@giobd", txtGioDB.Text.Trim());
+            cmd.Parameters.AddWithValue("@giobd", txtGioDB.Text);
             cmd.Parameters.AddWithValue("@madd", maDD);
             try
             {
@@ -237,3 +247,4 @@ namespace QuanLyShow_CrystalReport.GUI
         }
     }
 }
+    

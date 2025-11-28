@@ -50,6 +50,7 @@
             this.lblCaSiChinh = new System.Windows.Forms.Label();
             this.lblMaShow = new System.Windows.Forms.Label();
             this.dgvShow = new System.Windows.Forms.DataGridView();
+            this.lblTongsoCS = new System.Windows.Forms.Label();
             this.grbThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCaSi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShow)).BeginInit();
@@ -267,11 +268,21 @@
             this.dgvShow.Size = new System.Drawing.Size(800, 145);
             this.dgvShow.TabIndex = 5;
             // 
+            // lblTongsoCS
+            // 
+            this.lblTongsoCS.AutoSize = true;
+            this.lblTongsoCS.Location = new System.Drawing.Point(845, 324);
+            this.lblTongsoCS.Name = "lblTongsoCS";
+            this.lblTongsoCS.Size = new System.Drawing.Size(192, 20);
+            this.lblTongsoCS.TabIndex = 6;
+            this.lblTongsoCS.Text = "Tổng số ca sĩ biểu diễn: ";
+            // 
             // FormQLShow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 518);
+            this.Controls.Add(this.lblTongsoCS);
             this.Controls.Add(this.dgvShow);
             this.Controls.Add(this.grbThongTin);
             this.Controls.Add(this.tvwDiaChiSanKhau);
@@ -317,5 +328,6 @@
         private System.Windows.Forms.TextBox txtGioDB;
         private System.Windows.Forms.TextBox txtMaShow;
         private System.Windows.Forms.PictureBox picCaSi;
+        private System.Windows.Forms.Label lblTongsoCS;
     }
 }
